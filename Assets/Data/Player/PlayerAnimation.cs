@@ -8,6 +8,7 @@ public class PlayerAnimation : TrisMonoBehaviour
     [Header("Player Animation")]
     [SerializeField] protected Animator animator;
     [SerializeField] protected bool isMoving;
+    [SerializeField] protected PlayerCtrl playerCtrl;
     protected virtual void Update()
     {
         this.IdieToMoving();
@@ -16,6 +17,7 @@ public class PlayerAnimation : TrisMonoBehaviour
     {
         base.LoadComponents();
         this.LoadAnimator();
+
     }
 
     protected virtual void LoadAnimator()
@@ -24,18 +26,19 @@ public class PlayerAnimation : TrisMonoBehaviour
         animator = GetComponent<Animator>();
         Debug.LogWarning(transform.name + " :LoadAnimator", gameObject);
     }
-    protected virtual bool CheckIsMoving()
-    {
-        Vector4 playerDirection = InputManager.Instance.Direction;
-        if ((playerDirection.x != 0 || playerDirection.y != 0 
-            || playerDirection.z != 0 || playerDirection.w != 0)) return true;
-        return false;
-    }
     protected virtual void IdieToMoving()
     {
-        //Vector2 playerDirection = InputManager.Instance.Direction;
-        //animator.SetFloat("moveX", Mathf.Abs((float)playerDirection.x));
-        //animator.SetFloat("moveY", Mathf.Abs((float)playerDirection.y));
-        animator.SetBool("move", CheckIsMoving());
+        Vector2 playerDirection = InputManager.Instance.Direction;
+        animator.SetFloat("moveX", playerDirection.x);
+        animator.SetFloat("moveY", playerDirection.y);
+
+
+        //bool isMoving = playerDirection.sqrMagnitude > 0.01f;
+        //animator.SetBool("move", isMoving);
+
+        animator.SetBool("move", PlayerCtrl.Instance.PlayerMovement.CheckIsMoving());
+
     }
+
+    
 }
