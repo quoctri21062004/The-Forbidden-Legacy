@@ -43,7 +43,6 @@ public class BulletFly : TrisMonoBehaviour
 
     public virtual void SetDirectionFly(Vector2 newDirection)
     {
-
         directionBullet = newDirection; 
     }
 

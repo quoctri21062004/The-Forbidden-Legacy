@@ -10,19 +10,26 @@ public class BulletCtrl : TrisMonoBehaviour
 
     [SerializeField] protected BulletFly bulletFly ;
     public BulletFly BulletFly =>bulletFly ;
-  
-  
+
+    [SerializeField] protected BulletDespawn bulletDespawn;
+    public BulletDespawn BulletDespawn => bulletDespawn;
     protected override void LoadComponents()
     {
         base.LoadComponents();
         this.LoadBulletFly();
         this.LoadModel();
+        this.LoadBulletDespawn();
     }
 
     protected virtual void LoadBulletFly()
     {
         if(bulletFly!=null)return;
         bulletFly = GetComponentInChildren<BulletFly>();
+    }
+    protected virtual void LoadBulletDespawn()
+    {
+        if (bulletDespawn != null) return;
+        bulletDespawn = GetComponentInChildren<BulletDespawn>();
     }
     protected virtual void LoadModel()
     {

@@ -9,6 +9,8 @@ public class Spawner : TrisMonoBehaviour
     [SerializeField] protected Transform holder;
     [SerializeField] protected List<Transform> prefabs;
     [SerializeField] protected List<Transform> poolObjs;
+    [SerializeField] protected int spawnedCount;
+    public int SpawnedCount => spawnedCount;    
 
     protected override void LoadComponents()
     {
@@ -59,6 +61,7 @@ public class Spawner : TrisMonoBehaviour
 
         newPrefab.SetParent(this.holder);
         newPrefab.gameObject.SetActive(true);
+        spawnedCount++;
         return newPrefab;
     }
     protected virtual Transform GetObjectFromPool(Transform prefab)
@@ -81,6 +84,7 @@ public class Spawner : TrisMonoBehaviour
     {
         this.poolObjs.Add(obj);
         obj.gameObject.SetActive(false);
+        spawnedCount--;
     }
     public virtual Transform GetPrefabName(string prefabName)
     {

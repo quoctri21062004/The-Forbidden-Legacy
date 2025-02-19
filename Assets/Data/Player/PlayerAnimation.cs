@@ -32,10 +32,6 @@ public class PlayerAnimation : TrisMonoBehaviour
         animator.SetFloat("moveX", playerDirection.x);
         animator.SetFloat("moveY", playerDirection.y);
 
-
-        //bool isMoving = playerDirection.sqrMagnitude > 0.01f;
-        //animator.SetBool("move", isMoving);
-
         animator.SetBool("move", PlayerCtrl.Instance.PlayerMovement.CheckIsMoving());
 
     }
