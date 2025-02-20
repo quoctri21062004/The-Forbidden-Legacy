@@ -19,6 +19,6 @@ public class EnemyDamageReceiver : DameReceiver
     }
     protected override void OnDead()
     {
-        Debug.Log(transform.parent.name + " IS DEAD");
+        enemyCtrl.EnemySpawner.Despawn(transform.parent);
     }
 }
