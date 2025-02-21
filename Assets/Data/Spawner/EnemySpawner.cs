@@ -18,10 +18,4 @@ public class EnemySpawner : Spawner
         }
         EnemySpawner.instance = this;
     }
-    public virtual Transform RandomPrefabs()
-    {
-        int rand = Random.Range(0,prefabs.Count);
-        return this.prefabs[rand];
-    }
-  
 }

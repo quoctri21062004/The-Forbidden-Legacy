@@ -17,25 +17,25 @@ public class PlayerAttack : TrisMonoBehaviour
 
     protected virtual bool IsAttack()
     {
-        //timer += Time.deltaTime;
-        //if (timer < delayTime) return false;
-        //timer = 0f;
-        //return true;
         if (!InputManager.Instance.GetSignalsByMouse()) return false;
         return true;
-
     }
     protected virtual void Attack()
     {
         if (!IsAttack()) return ;
-
+        if (!AmmoManager.Instance.CheckHasAmmo())
+        {
+            Debug.Log("Het dan roi.Dung ban nua");
+            return;
+        }
         //this.timer += Time.fixedDeltaTime;
         //if (this.timer < delayTime) return;
         //this.timer = 0f;
 
         Vector2 targetPos = PlayerCtrl.Instance.TargetPoint.position;
         Transform newBullet =BulletSpawner.Instance.Spawn(BulletSpawner.bulletOne, PlayerCtrl.Instance.transform.position, Quaternion.identity);
-
+        AmmoManager.Instance.UseAmmo();
+        
         BulletFly bulletFly = newBullet.GetComponentInChildren<BulletFly>();
         if (bulletFly == null)
         {

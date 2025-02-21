@@ -9,6 +9,8 @@ public class BulletSpawner : Spawner
     public static BulletSpawner Instance { get => instance; }
 
     public static string bulletOne = "Bullet_1";
+
+    [SerializeField] public static int ammo = 10;
     
     protected override void Awake()
     {
