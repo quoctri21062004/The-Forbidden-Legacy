@@ -10,8 +10,6 @@ public class BulletSpawner : Spawner
 
     public static string bulletOne = "Bullet_1";
 
-    [SerializeField] public static int ammo = 10;
-    
     protected override void Awake()
     {
         base.Awake();
@@ -20,5 +18,6 @@ public class BulletSpawner : Spawner
             Debug.LogError("Only 1 BulletSpawner allow to exist");
         }
         BulletSpawner.instance = this;
+
     }
 }

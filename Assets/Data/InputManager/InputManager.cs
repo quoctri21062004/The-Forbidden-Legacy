@@ -14,6 +14,9 @@ public class InputManager : TrisMonoBehaviour
 
     [SerializeField] protected bool mouseClick = false;
     public bool MouseClick => mouseClick;
+
+    [SerializeField] protected Vector3 mousePos;
+    public Vector3 MousePos => mousePos;
     protected override void Awake()
     {
         base.Awake();
@@ -37,10 +40,6 @@ public class InputManager : TrisMonoBehaviour
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) direction.y = 1;
         if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) direction.y = -1;
 
-        //if (this.direction.x !=0) Debug.Log("Left");
-        //if (this.direction.y != 0) Debug.Log("Right");
-        //if (this.direction.z != 0) Debug.Log("Top");
-        //if (this.direction.w != 0) Debug.Log("Down");
         return direction;
     }
 
@@ -48,5 +47,12 @@ public class InputManager : TrisMonoBehaviour
     {
         mouseClick = Input.GetMouseButtonDown(0);
         return mouseClick;
+    }
+
+    public virtual Vector3 GetMousePos()
+    {
+        mousePos=Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePos.z = 0;
+        return mousePos;
     }
 }

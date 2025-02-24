@@ -6,6 +6,6 @@ public class BulletDespawn : DespawnByDistane
 {
     public override void DespawnObject()
     {
-        BulletSpawner.Instance.Despawn(transform.parent);
+       BulletSpawner.Instance.Despawn(transform.parent);
     }
 }

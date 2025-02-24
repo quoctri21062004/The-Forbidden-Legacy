@@ -31,18 +31,21 @@ public class PlayerAttack : TrisMonoBehaviour
         //this.timer += Time.fixedDeltaTime;
         //if (this.timer < delayTime) return;
         //this.timer = 0f;
-
-        Vector2 targetPos = PlayerCtrl.Instance.TargetPoint.position;
-        Transform newBullet =BulletSpawner.Instance.Spawn(BulletSpawner.bulletOne, PlayerCtrl.Instance.transform.position, Quaternion.identity);
-        AmmoManager.Instance.UseAmmo();
+        Vector3 mousePos = InputManager.Instance.GetMousePos();
         
+        Vector2 gunPos = WeaponCtrl.Instance.Model.transform.position;
+
+        Vector2 direction = (mousePos - (Vector3)gunPos).normalized;
+        Transform newBullet =BulletSpawner.Instance.Spawn(BulletSpawner.bulletOne,gunPos, Quaternion.identity);
+        AmmoManager.Instance.UseAmmo();
+
         BulletFly bulletFly = newBullet.GetComponentInChildren<BulletFly>();
-        if (bulletFly == null)
-        {
-            Debug.LogError("BulletFly = null");
-            return;
-        }
-        Vector2 direction = (targetPos - (Vector2)newBullet.position).normalized;
+        //if (bulletFly == null)
+        //{
+        //    Debug.LogError("BulletFly = null");
+        //    return;
+        //}
+       // Vector2 direction = (gunPos - (Vector2)newBullet.position).normalized;
         bulletFly.SetDirectionFly(direction);
     }
    

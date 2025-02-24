@@ -17,6 +17,7 @@ public class AmmoManager : TrisMonoBehaviour
         base.Awake();
         if (AmmoManager.instance != null) Debug.LogError("Only 1 AmmoManager allow to exist");
         AmmoManager.instance = this;
+
     }
     protected override void Start()
     {
@@ -24,9 +25,9 @@ public class AmmoManager : TrisMonoBehaviour
         this.SetAmmo();
     }
 
-    protected virtual void SetAmmo()
+    public virtual int SetAmmo()
     {
-        currentAmmo = maxAmmo;
+       return currentAmmo = maxAmmo;
     }
     public virtual bool CheckHasAmmo()
     {

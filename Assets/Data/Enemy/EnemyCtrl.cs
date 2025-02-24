@@ -3,23 +3,11 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class EnemyCtrl : TrisMonoBehaviour
+public class EnemyCtrl : ShootableObjectCtrl
 {
-   [Header("EnemyCtrl")]
-    [SerializeField] protected EnemySpawner enemySpawner;
-    public EnemySpawner EnemySpawner => enemySpawner;
-
-    protected override void LoadComponents()
+    //[Header("EnemyCtrl")]
+    protected override string GetObjectTypeString()
     {
-        base.LoadComponents();
-        this.LoadEnemySpawner();
+        return ShootableObjsType.Enemy.ToString();
     }
-
-    protected virtual void LoadEnemySpawner()
-    {
-        if (enemySpawner != null) return;
-        enemySpawner = GameObject.FindAnyObjectByType<EnemySpawner>().GetComponent<EnemySpawner>();
-    }
-
-
 }

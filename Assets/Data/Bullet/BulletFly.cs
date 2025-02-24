@@ -11,7 +11,7 @@ public class BulletFly : TrisMonoBehaviour
     [SerializeField] protected Transform player;
     [SerializeField] protected BulletCtrl bulletCtrl;
     public BulletCtrl BulletCtrl => bulletCtrl;
-    protected virtual void Update()
+    protected virtual void FixedUpdate()
     {
         this.Fly();
     }
@@ -38,7 +38,6 @@ public class BulletFly : TrisMonoBehaviour
 
         float angle = Mathf.Atan2(directionBullet.y, directionBullet.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, angle);
-        BulletCtrl.Model.rotation = Quaternion.Euler(0, 0, angle);
     }
 
     public virtual void SetDirectionFly(Vector2 newDirection)
