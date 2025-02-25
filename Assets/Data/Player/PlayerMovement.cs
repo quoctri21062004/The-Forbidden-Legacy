@@ -11,7 +11,6 @@ public class PlayerMovement : TrisMonoBehaviour
     protected virtual void Update()
     {
         this.Moving();
-        this.UpdateTargetPos();
     }
     protected override void LoadComponents()
     {
@@ -41,13 +40,5 @@ public class PlayerMovement : TrisMonoBehaviour
       //  transform.parent.Translate(moveDirection*moveSpeed * Time.fixedDeltaTime);
 
     }
-    protected virtual void UpdateTargetPos()
-    {
-        Vector2 moveDirection = InputManager.Instance.Direction;
-
-        if (moveDirection.sqrMagnitude > 0.01f) // Chỉ cập nhật khi Player di chuyển
-        {
-            PlayerCtrl.Instance.TargetPoint.position = (Vector2)transform.position + moveDirection.normalized * 10f;
-        }
-    }
+    
 }

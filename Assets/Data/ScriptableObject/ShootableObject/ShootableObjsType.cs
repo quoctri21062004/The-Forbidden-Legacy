@@ -9,4 +9,6 @@ public enum ShootableObjsType
    Enemy=1,
    EliteEnemy=2,
    Boss =3,
+
+   Drone=4,
 }

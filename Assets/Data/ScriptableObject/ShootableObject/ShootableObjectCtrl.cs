@@ -17,6 +17,7 @@ public abstract class ShootableObjectCtrl : TrisMonoBehaviour
     [SerializeField] protected Despawn despawn;
     public Despawn Despawn => despawn;
 
+
     protected override void LoadComponents()
     {
         base.LoadComponents();
