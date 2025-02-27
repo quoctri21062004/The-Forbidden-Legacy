@@ -16,7 +16,7 @@ public class PlayerDroneMovement : TrisMonoBehaviour
 
     protected virtual void PlayerDroneFollowPlayer()
     {
-        Vector2 targetPos = (Vector2)transform.parent.position + new Vector2 (limitDistance,limitDistance);
-        transform.position = Vector2.Lerp(transform.position, targetPos, speed * Time.fixedDeltaTime);
+        Vector2 targetPos = (Vector2)transform.parent.parent.position + new Vector2 (limitDistance,limitDistance);
+        transform.parent.position = Vector2.Lerp(transform.position, targetPos, speed * Time.fixedDeltaTime);
     }
 }

@@ -17,6 +17,9 @@ public class PlayerCtrl : TrisMonoBehaviour
     [SerializeField] protected PlayerDroneMovement playerDroneMovement;
     public PlayerDroneMovement PlayerDroneMovement => playerDroneMovement;
 
+    [SerializeField] protected PlayerAttack playerAttack;
+    public PlayerAttack PlayerAttack => playerAttack;
+
     protected override void Awake()
     {
         base.Awake();
@@ -29,6 +32,8 @@ public class PlayerCtrl : TrisMonoBehaviour
         this.LoadPlayerMovement();
         this.LoadPlayerDrone();
         this.LoadPlayerDroneMovement();
+        this.LoadPlayerAttack();
+
 
     }
     protected virtual void LoadPlayerMovement()
@@ -37,7 +42,13 @@ public class PlayerCtrl : TrisMonoBehaviour
         playerMovement = transform.GetComponentInChildren<PlayerMovement>();
         Debug.LogWarning(transform.name + " :LoadPlayerMovement", gameObject);
     }
-   
+    protected virtual void LoadPlayerAttack()
+    {
+        if (playerAttack != null) return;
+        playerAttack = transform.GetComponentInChildren<PlayerAttack>();
+        Debug.LogWarning(transform.name + " :LoadPlayerAttack", gameObject);
+    }
+
     protected virtual void LoadPlayerDrone()
     {
         if (this.playerDrone != null) return;
@@ -48,6 +59,5 @@ public class PlayerCtrl : TrisMonoBehaviour
     {
         if (playerDroneMovement != null) return;
         playerDroneMovement = transform.GetComponentInChildren<PlayerDroneMovement>();
-        Debug.LogWarning(transform.name + " :LoadPlayerDroneMovement", gameObject);
     }
 }

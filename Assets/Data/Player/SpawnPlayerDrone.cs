@@ -6,7 +6,7 @@ public class SpawnPlayerDrone : TrisMonoBehaviour
 {
     [Header("Spawn PlayerDrone")]
     [SerializeField] protected Transform dronePrefab;
-    [SerializeField] protected Transform targetPoint;
+    [SerializeField] public Transform targetPoint;
     protected override void Start()
     {
         base.Start();

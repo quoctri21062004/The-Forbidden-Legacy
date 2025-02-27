@@ -45,7 +45,7 @@ public class InputManager : TrisMonoBehaviour
 
     public virtual bool GetSignalsByMouse()
     {
-        mouseClick = Input.GetMouseButtonDown(0);
+        mouseClick = Input.GetMouseButtonDown(0) || Input.GetMouseButton(0);
         return mouseClick;
     }
 

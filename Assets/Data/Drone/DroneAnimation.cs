@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,27 +6,55 @@ public class DroneAnimation : TrisMonoBehaviour
 {
     [Header("Drone Animation")]
     [SerializeField] protected Animator animator;
-    [SerializeField] protected bool isMoving;
-    [SerializeField] protected DroneCtrl droneCtrl;
-    [SerializeField] protected Vector2 lastMoveDirection = Vector2.down;
-
+    [SerializeField] protected Vector2 previousPosition;
+    [SerializeField] protected Transform model;
+    protected virtual void Update()
+    {
+        this.DroneAnim();
+        this.DroneShooting();
+    }
     protected override void LoadComponents()
     {
         base.LoadComponents();
         this.LoadAnimator();
-        this.LoadDroneCtrl();
     }
 
-    protected virtual void LoadDroneCtrl()
-    {
-        if (droneCtrl != null) return;
-        droneCtrl = GetComponentInParent<DroneCtrl>();
-    }
     protected virtual void LoadAnimator()
     {
         if (animator != null) return;
         animator = GetComponent<Animator>();
         Debug.LogWarning(transform.name + " :LoadAnimator", gameObject);
     }
+    protected virtual void DroneAnim()
+    {
+        Vector2 droneDirection = (Vector2)transform.position - (Vector2)previousPosition;
+        bool isMoving = Mathf.Abs(droneDirection.x) > 0.01f;
 
+        animator.SetBool("move", isMoving);
+
+        if (isMoving)
+        {
+            float moveX = droneDirection.x > 0 ? 1 : -1; 
+            animator.SetFloat("moveX", moveX);
+
+            if (Mathf.Sign(model.localScale.x) != moveX)
+            {
+                model.localScale = new Vector3(moveX * Mathf.Abs(model.localScale.x), model.localScale.y, model.localScale.z);
+            }
+        }
+
+        previousPosition = transform.position;
+
+    }
+    protected virtual void DroneShooting()
+    {
+        if(InputManager.Instance.GetSignalsByMouse())
+        {
+            animator.SetBool("shoot", true);
+        }
+        if(!InputManager.Instance.GetSignalsByMouse())
+        {
+            animator.SetBool("shoot",false);
+        }
+    }
 }

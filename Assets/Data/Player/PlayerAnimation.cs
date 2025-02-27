@@ -14,7 +14,7 @@ public class PlayerAnimation : TrisMonoBehaviour
 
     protected virtual void Update()
     {
-        this.IdleToMove();
+        this.PlayerAnim();
     }
     protected override void LoadComponents()
     {
@@ -34,7 +34,7 @@ public class PlayerAnimation : TrisMonoBehaviour
         animator = GetComponent<Animator>();
         Debug.LogWarning(transform.name + " :LoadAnimator", gameObject);
     }
-    protected virtual void IdleToMove()
+    protected virtual void PlayerAnim()
     {
         Vector2 playerDirection = InputManager.Instance.Direction;
         isMoving = playerDirection != Vector2.zero;

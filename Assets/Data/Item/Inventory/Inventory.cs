@@ -8,18 +8,24 @@ public class Inventory : TrisMonoBehaviour
     [Header("Inventory")]
     [SerializeField] protected int maxSlot = 70;
     [SerializeField] protected List<ItemInventory> items;
-    protected override void Start()
-    {
-        base.Start();
-        this.AddItem(ItemCode.Ammo, 4);
-    }
 
     public virtual bool AddItem(ItemCode itemCode, int addCount)
     {
         ItemInventory itemInventory = this.GetItemByCode(itemCode);
 
         int newCount = itemInventory.itemCount + addCount;
-        if (newCount > itemInventory.maxStack) return false;
+        if (newCount > itemInventory.maxStack) return false; 
+
+        itemInventory.itemCount = newCount;
+        return true;
+    }
+
+    public virtual bool DeductItem(ItemCode itemCode,int deduct)
+    {
+        ItemInventory itemInventory = this.GetItemByCode(itemCode);
+
+        int newCount = itemInventory.itemCount - deduct;
+        if(newCount < 0)return false;
 
         itemInventory.itemCount = newCount;
         return true;
