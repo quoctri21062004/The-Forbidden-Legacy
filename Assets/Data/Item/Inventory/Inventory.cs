@@ -11,48 +11,145 @@ public class Inventory : TrisMonoBehaviour
 
     public virtual bool AddItem(ItemCode itemCode, int addCount)
     {
-        ItemInventory itemInventory = this.GetItemByCode(itemCode);
+        ItemProfileSO itemProfile = this.GetItemProfile(itemCode);
 
-        int newCount = itemInventory.itemCount + addCount;
-        if (newCount > itemInventory.maxStack) return false; 
+        int addRemain = addCount;
+        int newCount;
+        int itemMaxStack;
+        int addMore;
+        ItemInventory itemExist;
+        for (int i = 0; i < this.maxSlot; i++)
+        {
+            itemExist = GetItemNotFullStack(itemCode);
+            if (itemExist == null)
+            {
+                if(this.IsInventoryFull())return false;
 
-        itemInventory.itemCount = newCount;
+                itemExist = this.CreateEmptyItem(itemProfile);
+                this.items.Add(itemExist);
+            }
+
+            newCount = itemExist.itemCount + addRemain;
+            itemMaxStack = GetMaxStack(itemExist);
+            if (newCount > itemMaxStack)
+            {
+                addMore = itemMaxStack - itemExist.itemCount;
+                newCount = itemExist.itemCount + addMore;
+                addRemain -= addMore;
+            }
+            else
+            {
+                addRemain -= newCount;
+            }
+            itemExist.itemCount = newCount;
+            if (addRemain < 1) break;
+        }
         return true;
     }
 
-    public virtual bool DeductItem(ItemCode itemCode,int deduct)
+    protected virtual ItemInventory GetItemNotFullStack(ItemCode itemCode)
     {
-        ItemInventory itemInventory = this.GetItemByCode(itemCode);
+        foreach (ItemInventory item in items)
+        {
+            if (itemCode != item.itemProfile.itemCode) continue;
+            if (this.IsFullStack(item)) continue;
 
-        int newCount = itemInventory.itemCount - deduct;
-        if(newCount < 0)return false;
+            return item;
+        }
+        return null;
+    }
+    protected virtual bool IsFullStack(ItemInventory itemInventory)
+    {
+        if (itemInventory == null) return true;
 
-        itemInventory.itemCount = newCount;
-        return true;
+        int maxStack = GetMaxStack(itemInventory);
+        return itemInventory.itemCount >= maxStack;
+    }
+    protected virtual int GetMaxStack(ItemInventory itemInventory)
+    {
+        if (itemInventory == null) return 0;
+        return itemInventory.maxStack;
     }
 
-    public virtual ItemInventory GetItemByCode(ItemCode itemCode)
+    protected virtual ItemInventory CreateEmptyItem(ItemProfileSO itemProfile)
     {
-        ItemInventory itemInventory = this.items.Find((item) => item.itemProfile.itemCode == itemCode);
-        if (itemInventory == null) itemInventory = this.AddEmptyProfile(itemCode);
+        ItemInventory itemInventory = new ItemInventory();
+        {
+            itemInventory.itemProfile = itemProfile;
+            itemInventory.maxStack = itemProfile.defaultMaxStack;
+        }
         return itemInventory;
     }
 
-    protected virtual ItemInventory AddEmptyProfile(ItemCode itemCode)
+    protected virtual ItemProfileSO GetItemProfile(ItemCode itemCode)
     {
         var profiles = Resources.LoadAll("Item", typeof(ItemProfileSO));
 
         foreach (ItemProfileSO profile in profiles)
         {
             if (profile.itemCode != itemCode) continue;
-            ItemInventory itemInventory = new ItemInventory
-            {
-                itemProfile = profile,
-                maxStack = profile.defaultMaxStack
-            };
-            this.items.Add(itemInventory);
-            return itemInventory;
+            return profile;
         }
         return null;
     }
+
+    protected virtual bool IsInventoryFull()
+    {
+        if(this.items.Count >=this.maxSlot) return true;
+        return false;
+    }
 }
+
+
+
+
+
+
+
+        //public virtual bool AddItem(ItemCode itemCode, int addCount)
+        //{
+        //    ItemInventory itemInventory = this.GetItemByCode(itemCode);
+
+        //    int newCount = itemInventory.itemCount + addCount;
+        //    if (newCount > itemInventory.maxStack) return false; 
+
+        //    itemInventory.itemCount = newCount;
+        //    return true;
+        //}
+
+        //public virtual bool DeductItem(ItemCode itemCode,int deduct)
+        //{
+        //    ItemInventory itemInventory = this.GetItemByCode(itemCode);
+
+        //    int newCount = itemInventory.itemCount - deduct;
+        //    if(newCount < 0)return false;
+
+        //    itemInventory.itemCount = newCount;
+        //    return true;
+        //}
+
+        //public virtual ItemInventory GetItemByCode(ItemCode itemCode)
+        //{
+        //    ItemInventory itemInventory = this.items.Find((item) => item.itemProfile.itemCode == itemCode);
+        //    if (itemInventory == null) itemInventory = this.AddEmptyProfile(itemCode);
+        //    return itemInventory;
+        //}
+
+        //protected virtual ItemInventory AddEmptyProfile(ItemCode itemCode)
+        //{
+        //    var profiles = Resources.LoadAll("Item", typeof(ItemProfileSO));
+
+        //    foreach (ItemProfileSO profile in profiles)
+        //    {
+        //        if (profile.itemCode != itemCode) continue;
+        //        ItemInventory itemInventory = new ItemInventory
+        //        {
+        //            itemProfile = profile,
+        //            maxStack = profile.defaultMaxStack
+        //        };
+        //        this.items.Add(itemInventory);
+        //        return itemInventory;
+        //    }
+        //    return null;
+        //}
+    
