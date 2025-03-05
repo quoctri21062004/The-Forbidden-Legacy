@@ -7,6 +7,12 @@ public class EnemyDetection : EnemyAbstract
     [Header("Enemy Detection")]
     [SerializeField] protected CircleCollider2D circleCollider2;
     [SerializeField] protected Transform player;
+
+    protected override void Start()
+    {
+        base.Start();
+        enemyCtrl.EnemyMovement.gameObject.SetActive(false);
+    }
     protected override void LoadComponents()
     {
         base.LoadComponents();

@@ -1,0 +1,1038 @@
+fileFormatVersion: 2
+guid: 633cc76930c880b4585118f038172315
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Mushroom-AttackWithStun_0
+      rect:
+        serializedVersion: 2
+        x: 827
+        y: 0
+        width: 30
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e34c4553f6b14434fb88e0c5c944863d
+      internalID: -2076350818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushroom-AttackWithStun_1
+      rect:
+        serializedVersion: 2
+        x: 907
+        y: 34
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0b0332a65554414b96c058e755300cb
+      internalID: -846340065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushroom-AttackWithStun_2
+      rect:
+        serializedVersion: 2
+        x: 927
+        y: 33
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3bd69ba77f5e4743b26e710e5065e0e
+      internalID: 1908715077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushroom-AttackWithStun_3
+      rect:
+        serializedVersion: 2
+        x: 989
+        y: 35
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 229cc12ec78debd42b35e6f56dda2cdf
+      internalID: 1482688346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushroom-AttackWithStun_4
+      rect:
+        serializedVersion: 2
+        x: 1005
+        y: 33
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b11a85bce500aef4f9269bc193b1fe7f
+      internalID: 1794493779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushroom-AttackWithStun_5
+      rect:
+        serializedVersion: 2
+        x: 1078
+        y: 33
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af08ee6f85282e6468577fd118eea350
+      internalID: 1384602517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushroom-AttackWithStun_6
+      rect:
+        serializedVersion: 2
+        x: 1156
+        y: 33
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f37b530c0cf881b4997baab66e947022
+      internalID: -447480688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushroom-AttackWithStun_7
+      rect:
+        serializedVersion: 2
+        x: 1230
+        y: 33
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99c726792829e36419fc6970006285f9
+      internalID: -1650725502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushroom-AttackWithStun_8
+      rect:
+        serializedVersion: 2
+        x: 1244
+        y: 35
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 031a28656d9664c498ca6ec627a4ab31
+      internalID: 34463561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushroom-AttackWithStun_9
+      rect:
+        serializedVersion: 2
+        x: 1305
+        y: 34
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c28a1a269585664a97ff13acf6d334d
+      internalID: 830482757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushroom-AttackWithStun_10
+      rect:
+        serializedVersion: 2
+        x: 1329
+        y: 34
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e7e34e74d4018e4bb4bc773ed62e98c
+      internalID: -1334609237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushroom-AttackWithStun_11
+      rect:
+        serializedVersion: 2
+        x: 1387
+        y: 34
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4def20a37da7b4640a1ec1d1eae6a69c
+      internalID: -804150331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushroom-AttackWithStun_12
+      rect:
+        serializedVersion: 2
+        x: 1407
+        y: 33
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b15e076c321aebb48b3176551b3b1fe0
+      internalID: -2056007083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushroom-AttackWithStun_13
+      rect:
+        serializedVersion: 2
+        x: 1469
+        y: 35
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51c1bf891e36b51489f4435c25bb231a
+      internalID: -1265178022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushroom-AttackWithStun_14
+      rect:
+        serializedVersion: 2
+        x: 1485
+        y: 33
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cc02047e05b37940abd7ed0c6a4e04c
+      internalID: 1095148978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushroom-AttackWithStun_15
+      rect:
+        serializedVersion: 2
+        x: 1558
+        y: 33
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 257b2c3103004994b80b681eee092c0c
+      internalID: -341020053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushroom-AttackWithStun_16
+      rect:
+        serializedVersion: 2
+        x: 1636
+        y: 33
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86a34d87469e00f409e8c18c87c5696c
+      internalID: 994246340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushroom-AttackWithStun_17
+      rect:
+        serializedVersion: 2
+        x: 1711
+        y: 33
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75997f3e6e4a59643adb3412d4de0830
+      internalID: 634664271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushroom-AttackWithStun_18
+      rect:
+        serializedVersion: 2
+        x: 1725
+        y: 35
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fc39939d86cb5645a47262d652564b6
+      internalID: 726719491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushroom-AttackWithStun_19
+      rect:
+        serializedVersion: 2
+        x: 1786
+        y: 0
+        width: 30
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 601f78737f7d8a74a902457ffc0ba419
+      internalID: 235033404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushroom-AttackWithStun_20
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 0
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91a79138a1ab7d84bb4e07e4a5ddbf3e
+      internalID: 1064186130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushroom-AttackWithStun_21
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 0
+        width: 29
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa72a52310d55974e9e35c95f4cf0863
+      internalID: -365012133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushroom-AttackWithStun_22
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 0
+        width: 34
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be836cfe9c9ad714586a58cb9de09dd3
+      internalID: 643737270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushroom-AttackWithStun_23
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 0
+        width: 34
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08a8678afaa059243aabc00a36a4b574
+      internalID: -1020178141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushroom-AttackWithStun_24
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 2
+        width: 28
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b11690b0056b498478c30d1ecb8d3df8
+      internalID: 2111386564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushroom-AttackWithStun_25
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 0
+        width: 32
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88d852988195ec440b750896aaf45046
+      internalID: 1265441456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushroom-AttackWithStun_26
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 0
+        width: 32
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b6bb43c001580c4dabf036b250860ad
+      internalID: 1944889109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushroom-AttackWithStun_27
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 0
+        width: 32
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e64f32d490871c448ba2120f10920ac5
+      internalID: 1391710826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushroom-AttackWithStun_28
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 3
+        width: 31
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce3f7d3ef9a38164083a644c137f3bca
+      internalID: 507306252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushroom-AttackWithStun_29
+      rect:
+        serializedVersion: 2
+        x: 745
+        y: 0
+        width: 30
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75b5cd0cd609a18419615b5104112649
+      internalID: -859345978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushroom-AttackWithStun_30
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 0
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8c3c0209a5d3bc43a6e0d3170a1438e
+      internalID: -1972920280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushroom-AttackWithStun_31
+      rect:
+        serializedVersion: 2
+        x: 991
+        y: 0
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bcea8e5f61cf764ca57baca6a3e3390
+      internalID: 951367079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushroom-AttackWithStun_32
+      rect:
+        serializedVersion: 2
+        x: 1071
+        y: 0
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a39a81938d4bdc4f9292db362b1a8c5
+      internalID: 3289263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushroom-AttackWithStun_33
+      rect:
+        serializedVersion: 2
+        x: 1147
+        y: 0
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9b587990ca7fd64481889e1c8b32013
+      internalID: 534827267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushroom-AttackWithStun_34
+      rect:
+        serializedVersion: 2
+        x: 1224
+        y: 0
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8607625a9af347e479683b92af2c5514
+      internalID: 809716727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushroom-AttackWithStun_35
+      rect:
+        serializedVersion: 2
+        x: 1303
+        y: 0
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63880ca539dae9f4da3f3587356a50bd
+      internalID: 1119098558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushroom-AttackWithStun_36
+      rect:
+        serializedVersion: 2
+        x: 1383
+        y: 0
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47cef7046e48ed44da631b6f03eb4108
+      internalID: -1825982083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushroom-AttackWithStun_37
+      rect:
+        serializedVersion: 2
+        x: 1467
+        y: 0
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93c971331f8ed324398836ce19c6a3ed
+      internalID: 425589162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushroom-AttackWithStun_38
+      rect:
+        serializedVersion: 2
+        x: 1550
+        y: 0
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca9ac5a655567134fafc59ae3ca8bc90
+      internalID: 129697801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushroom-AttackWithStun_39
+      rect:
+        serializedVersion: 2
+        x: 1631
+        y: 0
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c718848ac668844e884fe0248a87c72
+      internalID: 607744142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushroom-AttackWithStun_40
+      rect:
+        serializedVersion: 2
+        x: 1711
+        y: 0
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3aae40310861b2a489327546a5fa8bf3
+      internalID: 438213939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushroom-AttackWithStun_41
+      rect:
+        serializedVersion: 2
+        x: 1865
+        y: 0
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b654a6c12783eb41964728c80c968fb
+      internalID: 2067886627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Mushroom-AttackWithStun_0: -2076350818
+      Mushroom-AttackWithStun_1: -846340065
+      Mushroom-AttackWithStun_10: -1334609237
+      Mushroom-AttackWithStun_11: -804150331
+      Mushroom-AttackWithStun_12: -2056007083
+      Mushroom-AttackWithStun_13: -1265178022
+      Mushroom-AttackWithStun_14: 1095148978
+      Mushroom-AttackWithStun_15: -341020053
+      Mushroom-AttackWithStun_16: 994246340
+      Mushroom-AttackWithStun_17: 634664271
+      Mushroom-AttackWithStun_18: 726719491
+      Mushroom-AttackWithStun_19: 235033404
+      Mushroom-AttackWithStun_2: 1908715077
+      Mushroom-AttackWithStun_20: 1064186130
+      Mushroom-AttackWithStun_21: -365012133
+      Mushroom-AttackWithStun_22: 643737270
+      Mushroom-AttackWithStun_23: -1020178141
+      Mushroom-AttackWithStun_24: 2111386564
+      Mushroom-AttackWithStun_25: 1265441456
+      Mushroom-AttackWithStun_26: 1944889109
+      Mushroom-AttackWithStun_27: 1391710826
+      Mushroom-AttackWithStun_28: 507306252
+      Mushroom-AttackWithStun_29: -859345978
+      Mushroom-AttackWithStun_3: 1482688346
+      Mushroom-AttackWithStun_30: -1972920280
+      Mushroom-AttackWithStun_31: 951367079
+      Mushroom-AttackWithStun_32: 3289263
+      Mushroom-AttackWithStun_33: 534827267
+      Mushroom-AttackWithStun_34: 809716727
+      Mushroom-AttackWithStun_35: 1119098558
+      Mushroom-AttackWithStun_36: -1825982083
+      Mushroom-AttackWithStun_37: 425589162
+      Mushroom-AttackWithStun_38: 129697801
+      Mushroom-AttackWithStun_39: 607744142
+      Mushroom-AttackWithStun_4: 1794493779
+      Mushroom-AttackWithStun_40: 438213939
+      Mushroom-AttackWithStun_41: 2067886627
+      Mushroom-AttackWithStun_5: 1384602517
+      Mushroom-AttackWithStun_6: -447480688
+      Mushroom-AttackWithStun_7: -1650725502
+      Mushroom-AttackWithStun_8: 34463561
+      Mushroom-AttackWithStun_9: 830482757
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,55 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class MushroomAnimation : TrisMonoBehaviour
+{
+    [Header("Mushroom Animation")]
+    [SerializeField] protected Animator animator;
+    [SerializeField] protected Vector2 previousPosition;
+    [SerializeField] protected bool isRunning;
+    [SerializeField] protected bool isAttack;
+    [SerializeField] protected Transform model;
+
+    protected virtual void FixedUpdate()
+    {
+        this.MushroomAnim();
+    }
+
+    protected override void LoadComponents()
+    {
+        base.LoadComponents();
+        this.LoadAnimator();
+    }
+    protected virtual void LoadAnimator()
+    {
+        if (animator != null) return;
+        animator = GetComponent<Animator>();
+    }
+
+    protected virtual void MushroomAnim()
+    {
+        Vector2 mushroomDirection = (Vector2)transform.position - (Vector2)(previousPosition);
+
+        Vector2 currentPos = transform.parent.position;
+        isRunning = currentPos != (Vector2)previousPosition;
+        animator.SetBool("IsRunning", isRunning);
+
+        if (isRunning)
+        {
+            float moveX = mushroomDirection.x > 0 ? 1 : -1;
+            animator.SetFloat("moveX", moveX);
+
+            if (Mathf.Sign(model.localScale.x) != moveX)
+            {
+                model.localScale = new Vector3(moveX * Mathf.Abs(model.localScale.x), model.localScale.y, model.localScale.z);
+            }
+        }
+        previousPosition = currentPos;
+    }
+
+    protected virtual void MushroomAttackAnim()
+    {
+        
+    }
+}

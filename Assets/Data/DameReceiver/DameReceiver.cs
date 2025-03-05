@@ -32,9 +32,9 @@ public abstract class DameReceiver : TrisMonoBehaviour
     protected override void LoadComponents()
     {
         base.LoadComponents();
-        this.LoadSphereCollider();
+        this.LoadCollider();
     }
-    protected virtual void LoadSphereCollider()
+    protected virtual void LoadCollider()
     {
         if (this.collider2 != null) return;
         this.collider2 = GetComponent<Collider2D>();
