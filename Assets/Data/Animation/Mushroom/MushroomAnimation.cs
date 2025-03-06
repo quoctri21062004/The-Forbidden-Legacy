@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MushroomAnimation : TrisMonoBehaviour
+public class MushroomAnimation : EnemyAbstract
 {
     [Header("Mushroom Animation")]
     [SerializeField] protected Animator animator;
@@ -48,8 +48,15 @@ public class MushroomAnimation : TrisMonoBehaviour
         previousPosition = currentPos;
     }
 
-    protected virtual void MushroomAttackAnim()
+    public virtual void MushroomAttackAnim()
     {
-        
+        if (enemyCtrl.EnemyAttack.CanAttack())
+        {
+            animator.SetBool("IsAttack", true);
+        }
+        if (!enemyCtrl.EnemyAttack.CanAttack())
+        {
+            animator.SetBool("IsAttack", false);
+        }
     }
 }

@@ -20,6 +20,12 @@ public class PlayerCtrl : TrisMonoBehaviour
     [SerializeField] protected PlayerAttack playerAttack;
     public PlayerAttack PlayerAttack => playerAttack;
 
+    [SerializeField] protected PlayerDamageReceiver playerDamageReceiver;
+    public PlayerDamageReceiver PlayerDamageReceiver => playerDamageReceiver;
+
+    [SerializeField] protected PlayerRaycastReceiver playerRaycastReceiver;
+    public PlayerRaycastReceiver PlayerRaycastReceiver => playerRaycastReceiver;
+
     protected override void Awake()
     {
         base.Awake();
@@ -33,8 +39,20 @@ public class PlayerCtrl : TrisMonoBehaviour
         this.LoadPlayerDrone();
         this.LoadPlayerDroneMovement();
         this.LoadPlayerAttack();
+        this.LoadPlayerDamageReceiver();
+        this.LoadPlayerRaycastReceiver();
 
+    }
 
+    protected virtual void LoadPlayerRaycastReceiver()
+    {
+        if (playerRaycastReceiver != null) return;
+        playerRaycastReceiver = transform.GetComponentInChildren<PlayerRaycastReceiver>();
+    }
+    protected virtual void LoadPlayerDamageReceiver()
+    {
+        if (playerDamageReceiver != null) return;
+        playerDamageReceiver = transform.GetComponentInChildren<PlayerDamageReceiver>();
     }
     protected virtual void LoadPlayerMovement()
     {

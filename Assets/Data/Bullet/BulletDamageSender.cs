@@ -30,7 +30,7 @@ public class BulletDamageSender : DameSender
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        DameReceiver enemy = other.GetComponent<DameReceiver>();
+        ShootableObjectDameReceiver enemy = other.GetComponent<ShootableObjectDameReceiver>();
         if (enemy != null)
         {
            Send(enemy);
