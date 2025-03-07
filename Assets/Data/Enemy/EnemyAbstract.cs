@@ -6,7 +6,7 @@ public abstract class EnemyAbstract : TrisMonoBehaviour
 {
     [Header("Enemy Abstract")]
     [SerializeField] protected EnemyCtrl enemyCtrl;
-
+    public EnemyCtrl EnemyCtrl => enemyCtrl;    
     protected override void LoadComponents()
     {
         base.LoadComponents();

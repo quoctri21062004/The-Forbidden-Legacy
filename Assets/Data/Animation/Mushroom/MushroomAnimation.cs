@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,15 +6,13 @@ public class MushroomAnimation : EnemyAbstract
 {
     [Header("Mushroom Animation")]
     [SerializeField] protected Animator animator;
+    public Animator Animator => animator;
+
     [SerializeField] protected Vector2 previousPosition;
     [SerializeField] protected bool isRunning;
     [SerializeField] protected bool isAttack;
     [SerializeField] protected Transform model;
 
-    protected virtual void FixedUpdate()
-    {
-        this.MushroomAnim();
-    }
 
     protected override void LoadComponents()
     {
@@ -50,13 +48,12 @@ public class MushroomAnimation : EnemyAbstract
 
     public virtual void MushroomAttackAnim()
     {
-        if (enemyCtrl.EnemyAttack.CanAttack())
-        {
-            animator.SetBool("IsAttack", true);
-        }
-        if (!enemyCtrl.EnemyAttack.CanAttack())
-        {
-            animator.SetBool("IsAttack", false);
-        }
+        animator.SetBool("IsAttack", true);
+        StartCoroutine(ResetAttackAnim());
+    }
+    private IEnumerator ResetAttackAnim()
+    {
+        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length); 
+        animator.SetBool("IsAttack", false);
     }
 }

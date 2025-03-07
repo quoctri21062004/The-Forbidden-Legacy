@@ -5,9 +5,9 @@ using UnityEngine;
 public class EnemyMovement : TrisMonoBehaviour
 {
     [Header("Enemy Movement")]
-    [SerializeField] protected float moveSpeed =20f; 
+    [SerializeField] protected float moveSpeed =0.005f; 
     [SerializeField] protected float distance = 1f;
-    [SerializeField] protected float minDistance = 1f;
+    [SerializeField] protected float minDistance = 5f;
     [SerializeField] protected Transform target;
     [SerializeField] protected Vector3 targetPosition;
 

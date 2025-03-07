@@ -446,6 +446,9 @@ MonoBehaviour:
   despawn: {fileID: 1712025753}
   enemyMovement: {fileID: 1765999864}
   enemyAttack: {fileID: 0}
+  enemyDetection: {fileID: 0}
+  mushroomAnimation: {fileID: 0}
+  enemyDamageSender: {fileID: 0}
 --- !u!4 &170821249
 Transform:
   m_ObjectHideFlags: 0
@@ -630,7 +633,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyCtrl: {fileID: 773087781}
   circleCollider2: {fileID: 271394874}
-  player: {fileID: 1683839082}
+  Trigger: 0
 --- !u!1 &295246930
 GameObject:
   m_ObjectHideFlags: 0
@@ -971,7 +974,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &434536622
 Transform:
   m_ObjectHideFlags: 0
@@ -1692,7 +1695,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 0.005
   distance: 1
-  minDistance: 1
+  minDistance: 5
   target: {fileID: 1683839082}
   targetPosition: {x: 0, y: 0, z: 0}
 --- !u!4 &662585965
@@ -2005,7 +2008,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyCtrl: {fileID: 170821248}
   circleCollider2: {fileID: 714233621}
-  player: {fileID: 1683839082}
+  Trigger: 0
 --- !u!1 &728208818
 GameObject:
   m_ObjectHideFlags: 0
@@ -2131,7 +2134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60a20ed8af67fae438c3a093bd5d3d5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyCtrl: {fileID: 0}
+  enemyCtrl: {fileID: 1172696443}
   animator: {fileID: 766418138}
   previousPosition: {x: 0, y: 0}
   isRunning: 0
@@ -2245,6 +2248,9 @@ MonoBehaviour:
   despawn: {fileID: 576534939}
   enemyMovement: {fileID: 313588048}
   enemyAttack: {fileID: 0}
+  enemyDetection: {fileID: 0}
+  mushroomAnimation: {fileID: 0}
+  enemyDamageSender: {fileID: 0}
 --- !u!4 &773087782
 Transform:
   m_ObjectHideFlags: 0
@@ -2764,6 +2770,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1172696444}
   - component: {fileID: 1172696443}
+  - component: {fileID: 1172696445}
   m_Layer: 0
   m_Name: Enemy_2
   m_TagString: Untagged
@@ -2788,7 +2795,10 @@ MonoBehaviour:
   spawner: {fileID: 1152560829}
   despawn: {fileID: 728208819}
   enemyMovement: {fileID: 662585964}
-  enemyAttack: {fileID: 0}
+  enemyAttack: {fileID: 2002781783}
+  enemyDetection: {fileID: 1867198137}
+  mushroomAnimation: {fileID: 766418137}
+  enemyDamageSender: {fileID: 434536624}
 --- !u!4 &1172696444
 Transform:
   m_ObjectHideFlags: 0
@@ -2798,7 +2808,7 @@ Transform:
   m_GameObject: {fileID: 1172696442}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 17.6, y: 0, z: 0}
+  m_LocalPosition: {x: 21.88, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2812,6 +2822,20 @@ Transform:
   - {fileID: 2002781782}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1172696445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172696442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebb81f042490f674d82721d52170d855, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyCtrl: {fileID: 1172696443}
+  animator: {fileID: 766418138}
 --- !u!1 &1272030799
 GameObject:
   m_ObjectHideFlags: 0
@@ -4289,7 +4313,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyCtrl: {fileID: 1172696443}
   circleCollider2: {fileID: 1867198136}
-  player: {fileID: 1683839082}
+  Trigger: 0
 --- !u!1 &1885361620
 GameObject:
   m_ObjectHideFlags: 0
@@ -4535,11 +4559,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ef551beeeedcc34e83ae728d9b0e538, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mushroomAnimation: {fileID: 766418137}
+  enemyCtrl: {fileID: 1172696443}
   model: {fileID: 766418136}
-  attackRange: 3
-  attackTimeDelay: 1
-  attackTimeLimit: 0
+  attackRange: 4
+  hasDetectedPlayer: 0
 --- !u!1 &2003616790
 GameObject:
   m_ObjectHideFlags: 0
