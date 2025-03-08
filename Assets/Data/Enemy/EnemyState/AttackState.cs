@@ -14,10 +14,8 @@ public class AttackState : EnemyState
     {
         if (isAttacking) return;
         isAttacking = true;
-       
         enemyCtrl.MushroomAnimation.MushroomAttackAnim();
         lastAttackTime = Time.time;
-        enemyCtrl.EnemyDamageSender.gameObject.SetActive(true);
 
         enemyStateMachine.StartCoroutine(ResetAfterAttack());
     }
@@ -35,8 +33,6 @@ public class AttackState : EnemyState
             isAttacking = true;
             lastAttackTime = Time.time;
             enemyCtrl.MushroomAnimation.MushroomAttackAnim();
-            Debug.Log("Bật EnemyDamageSender");
-            enemyCtrl.EnemyDamageSender.gameObject.SetActive(true);
 
             enemyStateMachine.StartCoroutine(ResetAfterAttack());
         }
@@ -48,7 +44,5 @@ public class AttackState : EnemyState
         enemyCtrl.EnemyAttack.ResetDetection();
 
         isAttacking = false;
-        enemyCtrl.EnemyDamageSender.gameObject.SetActive(false);
-        Debug.Log("ResetAfterAttack chạy, tắt EnemyDamageSender");
     }
 }

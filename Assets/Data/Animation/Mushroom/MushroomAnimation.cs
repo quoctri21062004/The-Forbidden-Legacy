@@ -56,4 +56,17 @@ public class MushroomAnimation : EnemyAbstract
         yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length); 
         animator.SetBool("IsAttack", false);
     }
+
+    public void EnableDamageSender()
+    {
+        Debug.Log("Bật EnemyDamageSender từ Animation Event!");
+        enemyCtrl.EnemyDamageSender.gameObject.SetActive(true);
+    }
+
+    public void DisableDamageSender()
+    {
+        Debug.Log("Tắt EnemyDamageSender từ Animation Event!");
+        enemyCtrl.EnemyDamageSender.gameObject.SetActive(false);
+    }
+
 }
