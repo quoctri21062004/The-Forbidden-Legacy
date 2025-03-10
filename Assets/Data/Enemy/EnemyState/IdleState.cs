@@ -8,7 +8,7 @@ public class IdleState : EnemyState
 
     public override void EnterState()
     {
-        enemyStateMachine.Animator.SetBool("IsRunning", false);
+        enemyCtrl.MushroomAnimation.MushroomIdleAnim();
     }
 
     public override void UpdateState()

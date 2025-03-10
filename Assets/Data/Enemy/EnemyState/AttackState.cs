@@ -22,7 +22,7 @@ public class AttackState : EnemyState
 
     public override void ExitState()
     {
-        enemyStateMachine.Animator.SetBool("IsAttack", false);
+        mushroomAnimation.Animator.SetBool("IsAttack", false);
         isAttacking = false;
     }
 

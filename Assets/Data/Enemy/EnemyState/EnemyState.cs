@@ -7,7 +7,7 @@ public abstract class EnemyState
     [Header("Enemy State")]
     [SerializeField]protected EnemyStateMachine enemyStateMachine;
     [SerializeField]protected EnemyCtrl enemyCtrl;
-
+    [SerializeField] protected MushroomAnimation mushroomAnimation;
     public EnemyState (EnemyStateMachine enemyStateMachine)
     {
         this.enemyStateMachine = enemyStateMachine;

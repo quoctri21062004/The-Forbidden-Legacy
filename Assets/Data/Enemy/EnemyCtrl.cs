@@ -21,6 +21,12 @@ public class EnemyCtrl : ShootableObjectCtrl
     [SerializeField] protected EnemyDamageSender enemyDamageSender;
     public EnemyDamageSender EnemyDamageSender => enemyDamageSender;
 
+    [SerializeField] protected EnemyStateMachine enemyStateMachine;
+    public EnemyStateMachine EnemyStateMachine => enemyStateMachine;
+
+    [SerializeField] protected EnemyDamageReceiver enemyDamageReceiver;
+    public EnemyDamageReceiver EnemyDamageReceiver => enemyDamageReceiver;
+
     protected override void LoadComponents()
     {
         base.LoadComponents();
@@ -28,6 +34,9 @@ public class EnemyCtrl : ShootableObjectCtrl
         this.LoadEnemyAttack();
         this.LoadEnemyDetection();
         this.LoadEnemyDamageSender();
+        this.LoadEnemyDamageReceiver();
+        this.LoadEnemyStateMachine();
+        this.LoadMushroomAnimation();
     }
 
     protected virtual void LoadEnemyMovement()
@@ -47,9 +56,29 @@ public class EnemyCtrl : ShootableObjectCtrl
     }
     protected virtual void LoadEnemyDamageSender()
     {
-        if (EnemyDamageSender != null) return;
+        if (enemyDamageSender != null) return;
         enemyDamageSender = GetComponentInChildren<EnemyDamageSender>();
     }
+
+    protected virtual void LoadEnemyDamageReceiver()
+    {
+        if (enemyDamageReceiver != null) return;
+        enemyDamageReceiver = GetComponentInChildren<EnemyDamageReceiver>();
+    }
+
+    protected virtual void LoadEnemyStateMachine()
+    {
+        if (enemyStateMachine != null) return;
+        GameObject stateMachine = GameObject.Find("EnemyStateMachine");
+        enemyStateMachine = stateMachine.GetComponent<EnemyStateMachine>();
+    }
+    protected virtual void LoadMushroomAnimation()
+    {
+        if(mushroomAnimation != null) return;
+        Transform model = transform.Find("Model");
+        mushroomAnimation = model.GetComponent<MushroomAnimation>();
+    }
+
     protected override string GetObjectTypeString()
     {
         return ShootableObjsType.Enemy.ToString();

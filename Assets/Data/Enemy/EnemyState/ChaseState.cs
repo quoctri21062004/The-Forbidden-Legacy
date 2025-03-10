@@ -8,7 +8,7 @@ public class ChaseState : EnemyState
 
     public override void EnterState()
     {
-        enemyStateMachine.Animator.SetBool("IsRunning", true);
+        enemyCtrl.MushroomAnimation.MushroomMovingAnim();
     }
 
     public override void UpdateState()

@@ -24,8 +24,13 @@ public class MushroomAnimation : EnemyAbstract
         if (animator != null) return;
         animator = GetComponent<Animator>();
     }
+    public virtual void MushroomIdleAnim()
+    {
+        isRunning = false;
+        animator.SetBool("IsRunning", isRunning);
+    }
 
-    protected virtual void MushroomAnim()
+    public virtual void MushroomMovingAnim()
     {
         Vector2 mushroomDirection = (Vector2)transform.position - (Vector2)(previousPosition);
 
@@ -53,7 +58,7 @@ public class MushroomAnimation : EnemyAbstract
     }
     private IEnumerator ResetAttackAnim()
     {
-        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length); 
+        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
         animator.SetBool("IsAttack", false);
     }
 
@@ -69,4 +74,23 @@ public class MushroomAnimation : EnemyAbstract
         enemyCtrl.EnemyDamageSender.gameObject.SetActive(false);
     }
 
+    public virtual void MushroomDieAnim()
+    {
+        animator.SetBool("IsDie", true);
+    }
+
+    protected virtual AnimationClip GetAnimationClip(string clipName)
+    {
+        RuntimeAnimatorController ac = animator.runtimeAnimatorController;
+        foreach (AnimationClip clip in ac.animationClips)
+        {
+            if (clip.name == clipName) return clip;
+        }
+        return null;
+    }
+    public virtual float GetDieAnimationLength()
+    {
+        AnimationClip dieClip = GetAnimationClip("MushroomDie");
+        return dieClip != null ? dieClip.length : 2f; // Nếu không tìm thấy clip, trả về 1s mặc định
+    }
 }
