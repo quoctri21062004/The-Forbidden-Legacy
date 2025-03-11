@@ -78,19 +78,4 @@ public class MushroomAnimation : EnemyAbstract
     {
         animator.SetBool("IsDie", true);
     }
-
-    protected virtual AnimationClip GetAnimationClip(string clipName)
-    {
-        RuntimeAnimatorController ac = animator.runtimeAnimatorController;
-        foreach (AnimationClip clip in ac.animationClips)
-        {
-            if (clip.name == clipName) return clip;
-        }
-        return null;
-    }
-    public virtual float GetDieAnimationLength()
-    {
-        AnimationClip dieClip = GetAnimationClip("MushroomDie");
-        return dieClip != null ? dieClip.length : 2f; // Nếu không tìm thấy clip, trả về 1s mặc định
-    }
 }

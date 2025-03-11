@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class DieState : EnemyState
 {
-    [SerializeField] private AnimationClip dieClip;
     public DieState(EnemyStateMachine enemyStateMachine) : base(enemyStateMachine) { }
 
     public override void EnterState()
     {
+
         enemyCtrl.MushroomAnimation.MushroomDieAnim();
+        var deathHandler = enemyCtrl.GetComponent<EnemyDeathHandler>();
+        if (deathHandler == null) return;
+        deathHandler.HandleDeath();
+
     }
 
     public override void ExitState()
@@ -19,6 +23,6 @@ public class DieState : EnemyState
 
     public override void UpdateState()
     {
-        //
+       //
     }
 }

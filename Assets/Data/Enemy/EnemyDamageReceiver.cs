@@ -21,18 +21,5 @@ public class EnemyDamageReceiver : ShootableObjectDameReceiver
     protected override void OnDead()
     {
         enemyStateMachine.ChangeState(new DieState(enemyStateMachine));
-
-        float dieTime = enemyStateMachine.EnemyCtrl.MushroomAnimation.GetDieAnimationLength();
-        StartCoroutine(WaitForDeath(dieTime));
-        base.OnDead();
-    }
-
-    private IEnumerator WaitForDeath(float time)
-    {
-        yield return new WaitForSeconds(time);
-
-        //this.DropItemOnDead();
-
-        //enemyStateMachine.EnemyCtrl.Spawner.Despawn(transform);
     }
 }
