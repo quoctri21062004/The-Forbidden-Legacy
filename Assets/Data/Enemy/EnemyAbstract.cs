@@ -15,6 +15,6 @@ public abstract class EnemyAbstract : TrisMonoBehaviour
     protected virtual void LoadEnemyCtrl()
     {
         if (enemyCtrl != null) return;
-        enemyCtrl = GetComponent<EnemyCtrl>();
+        enemyCtrl = transform.parent.GetComponent<EnemyCtrl>();
     }
 }

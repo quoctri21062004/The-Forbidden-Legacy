@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,8 +15,7 @@ public class EnemyDamageReceiver : ShootableObjectDameReceiver
     protected virtual void LoadEnemyStateMachine()
     {
         if(enemyStateMachine != null) return;
-        GameObject stateMachine = GameObject.Find("EnemyStateMachine");
-        enemyStateMachine = stateMachine.GetComponent<EnemyStateMachine>();
+        enemyStateMachine = transform.parent.GetComponentInChildren<EnemyStateMachine>();
     }
     protected override void OnDead()
     {

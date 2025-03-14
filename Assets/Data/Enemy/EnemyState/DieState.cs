@@ -8,7 +8,6 @@ public class DieState : EnemyState
 
     public override void EnterState()
     {
-
         enemyCtrl.MushroomAnimation.MushroomDieAnim();
         var deathHandler = enemyCtrl.GetComponent<EnemyDeathHandler>();
         if (deathHandler == null) return;

@@ -7,8 +7,6 @@ public class EnemyCtrl : ShootableObjectCtrl
 {
     [Header("EnemyCtrl")]
 
-    private IEnemySetup enemySetup;
-
     [SerializeField] protected EnemyMovement enemyMovement;
     public EnemyMovement EnemyMovement =>enemyMovement;
 
@@ -31,7 +29,7 @@ public class EnemyCtrl : ShootableObjectCtrl
     public EnemyDamageReceiver EnemyDamageReceiver => enemyDamageReceiver;
 
     [SerializeField] protected EnemySpawner enemySpawner;
-     public EnemySpawner EnemySpawner => enemySpawner;
+    public EnemySpawner EnemySpawner => enemySpawner;
 
     [SerializeField] protected EnemyProfileSO enemyProfile;
 
@@ -54,8 +52,8 @@ public class EnemyCtrl : ShootableObjectCtrl
         this.LoadEnemyDamageReceiver();
         this.LoadEnemyStateMachine();
         this.LoadMushroomAnimation();
-        this.LoadEnemySpawner();
         this.LoadEnemyProfile();
+        this.LoadEnemySpawner();
     }
 
     protected virtual void LoadEnemyMovement()
@@ -98,12 +96,6 @@ public class EnemyCtrl : ShootableObjectCtrl
         mushroomAnimation = model.GetComponent<MushroomAnimation>();
     }
 
-    protected virtual void LoadEnemySpawner()
-    {
-        if (enemySpawner != null) return;
-        enemySpawner=EnemySpawner.Instance;
-    }
-
     protected virtual void LoadEnemyProfile()
     {
         if (shootableObjsProfileSO != null && shootableObjsProfileSO.objType == ShootableObjsType.Enemy)
@@ -112,6 +104,11 @@ public class EnemyCtrl : ShootableObjectCtrl
         }
     }
 
+    protected virtual void LoadEnemySpawner()
+    {
+        if(enemySpawner != null) return;
+        enemySpawner = transform.parent?.parent?.GetComponent<EnemySpawner>();
+    }
     protected virtual void SetupEnemy()
     {
         if (enemyProfile != null)
@@ -136,7 +133,7 @@ public class EnemyCtrl : ShootableObjectCtrl
 
     protected virtual void SetupNaturalEnemy()
     {
-        enemySpawner.enabled=false;
+       // enemySpawner.enabled=false;
         enemyDetection.gameObject.SetActive(true);
         enemyMovement.gameObject.SetActive(false);
     }

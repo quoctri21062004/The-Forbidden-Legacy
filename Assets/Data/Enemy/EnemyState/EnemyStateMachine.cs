@@ -7,12 +7,6 @@ public class EnemyStateMachine : EnemyAbstract
     [Header("Enemy State Machine")]
     [SerializeField] public EnemyState currentState;
 
-    protected override void LoadComponents()
-    {
-        base.LoadComponents();
-    }
-
-  
     protected override void Start()
     {
         ChangeState(new IdleState(this)); 

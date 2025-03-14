@@ -7,14 +7,13 @@ public class EnemyDeathHandler : TrisMonoBehaviour
     [Header("Enemy Death Handler")]
     [SerializeField] protected Animator animator;
     [SerializeField] protected EnemyStateMachine enemyStateMachine;
-    [SerializeField] protected EnemySpawner enemySpawner;
+    [SerializeField] protected EnemyCtrl enemyCtrl;
     [SerializeField] protected Transform enemyRoot;
     protected override void LoadComponents()
     {
         base.LoadComponents();
         this.LoadAnimator();
         this.LoadEnemyStateMachine();
-        this.LoadEnemySpawner();
     }
     protected virtual void LoadAnimator()
     {
@@ -25,15 +24,9 @@ public class EnemyDeathHandler : TrisMonoBehaviour
     protected virtual void LoadEnemyStateMachine()
     {
         if (enemyStateMachine != null) return;
-        GameObject stateMachine = GameObject.Find("EnemyStateMachine");
-        enemyStateMachine = stateMachine.GetComponent<EnemyStateMachine>();
+        enemyStateMachine = enemyCtrl.GetComponent<EnemyStateMachine>();
     }
-    protected virtual void LoadEnemySpawner()
-    {
-        if (enemySpawner != null) return;
-        enemySpawner = EnemySpawner.Instance;
-    }
-
+  
 
     public void HandleDeath()
     {
@@ -56,10 +49,11 @@ public class EnemyDeathHandler : TrisMonoBehaviour
     {
         yield return new WaitForSeconds(dieTime);
 
-        if (enemySpawner != null)
+        if (enemyCtrl.EnemySpawner != null)
         {
             Debug.Log("🛠 Despawn bằng EnemySpawner");
-            enemySpawner.Despawn(transform);
+            enemyCtrl.EnemySpawner.Despawn(transform);
+
         }
         else
         {
