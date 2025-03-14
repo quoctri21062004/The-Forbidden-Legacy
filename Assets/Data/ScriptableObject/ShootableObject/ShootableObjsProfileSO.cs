@@ -9,4 +9,7 @@ public class ShootableObjsProfileSO : ScriptableObject
     public ShootableObjsType objType;
     public int hpMax = 2;
     public List<DropItem> dropList;
+
+    public EnemyProfileSO enemyProfile;
+
 }

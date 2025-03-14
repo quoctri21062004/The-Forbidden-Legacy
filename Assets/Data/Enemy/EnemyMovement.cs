@@ -10,7 +10,7 @@ public class EnemyMovement : TrisMonoBehaviour
     [SerializeField] protected float minDistance = 5f;
     [SerializeField] protected Transform target;
     [SerializeField] protected Vector3 targetPosition;
-
+    [SerializeField] public bool isMoving;
     protected virtual void FixedUpdate()
     {
         this.GetTargetPosition();
@@ -45,5 +45,7 @@ public class EnemyMovement : TrisMonoBehaviour
 
         Vector3 newPos = Vector3.Lerp(transform.parent.position, targetPosition,this.moveSpeed);
         transform.parent.position = newPos;
+
+        this.isMoving=true;
     }
 }

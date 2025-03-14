@@ -35,6 +35,5 @@ public class EnemySenderRotation : EnemyAbstract
         newPos.x = Mathf.Abs(newPos.x) * (directionToPlayer.x < 0 ? -1 : 1);
 
         transform.parent.localPosition = newPos;
-        Debug.Log(transform.parent.name + " vị trí mới: " + transform.parent.localPosition);
     }
 }

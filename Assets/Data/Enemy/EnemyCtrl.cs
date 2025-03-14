@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -6,6 +6,9 @@ using UnityEngine;
 public class EnemyCtrl : ShootableObjectCtrl
 {
     [Header("EnemyCtrl")]
+
+    private IEnemySetup enemySetup;
+
     [SerializeField] protected EnemyMovement enemyMovement;
     public EnemyMovement EnemyMovement =>enemyMovement;
 
@@ -27,6 +30,20 @@ public class EnemyCtrl : ShootableObjectCtrl
     [SerializeField] protected EnemyDamageReceiver enemyDamageReceiver;
     public EnemyDamageReceiver EnemyDamageReceiver => enemyDamageReceiver;
 
+    [SerializeField] protected EnemySpawner enemySpawner;
+     public EnemySpawner EnemySpawner => enemySpawner;
+
+    [SerializeField] protected EnemyProfileSO enemyProfile;
+
+    protected override void Start()
+    {
+        if (shootableObjsProfileSO != null && shootableObjsProfileSO.objType == ShootableObjsType.Enemy)
+        {
+            SetupEnemy();
+        }
+    }
+
+
     protected override void LoadComponents()
     {
         base.LoadComponents();
@@ -37,6 +54,8 @@ public class EnemyCtrl : ShootableObjectCtrl
         this.LoadEnemyDamageReceiver();
         this.LoadEnemyStateMachine();
         this.LoadMushroomAnimation();
+        this.LoadEnemySpawner();
+        this.LoadEnemyProfile();
     }
 
     protected virtual void LoadEnemyMovement()
@@ -79,6 +98,48 @@ public class EnemyCtrl : ShootableObjectCtrl
         mushroomAnimation = model.GetComponent<MushroomAnimation>();
     }
 
+    protected virtual void LoadEnemySpawner()
+    {
+        if (enemySpawner != null) return;
+        enemySpawner=EnemySpawner.Instance;
+    }
+
+    protected virtual void LoadEnemyProfile()
+    {
+        if (shootableObjsProfileSO != null && shootableObjsProfileSO.objType == ShootableObjsType.Enemy)
+        {
+            this.enemyProfile = shootableObjsProfileSO.enemyProfile;
+        }
+    }
+
+    protected virtual void SetupEnemy()
+    {
+        if (enemyProfile != null)
+        {
+            if (enemyProfile.isSpawner)
+            {
+                SetupSpawnerEnemy();
+            }
+            else
+            {
+                SetupNaturalEnemy();
+            }
+        }
+    }
+
+    protected virtual void SetupSpawnerEnemy()
+    {
+        enemySpawner.enabled = true;
+        enemyDetection.gameObject.SetActive(false);
+        EnemyMovement.gameObject.SetActive(true);
+    }
+
+    protected virtual void SetupNaturalEnemy()
+    {
+        enemySpawner.enabled=false;
+        enemyDetection.gameObject.SetActive(true);
+        enemyMovement.gameObject.SetActive(false);
+    }
     protected override string GetObjectTypeString()
     {
         return ShootableObjsType.Enemy.ToString();

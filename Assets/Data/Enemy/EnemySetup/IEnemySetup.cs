@@ -2,12 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum ShootableObjsType
+public interface IEnemySetup
 {
-   NoType=0,
-
-   Enemy=1,
-   Boss =2,
-
-   Drone=3,
+    void Setup(EnemyCtrl enemy);
 }

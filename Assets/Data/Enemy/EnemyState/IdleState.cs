@@ -23,6 +23,10 @@ public class IdleState : EnemyState
         {
             enemyStateMachine.ChangeState(new ChaseState(enemyStateMachine));
         }
+        if(enemyCtrl.EnemyMovement.isMoving)
+        {
+            enemyStateMachine.ChangeState(new ChaseState(enemyStateMachine));
+        }
     }
 
     public override void ExitState()

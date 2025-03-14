@@ -15,7 +15,7 @@ public class EnemyStateMachine : EnemyAbstract
   
     protected override void Start()
     {
-        ChangeState(new IdleState(this));  // Bắt đầu với trạng thái Idle
+        ChangeState(new IdleState(this)); 
     }
 
     protected virtual void Update()

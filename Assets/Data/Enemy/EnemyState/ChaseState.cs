@@ -11,15 +11,15 @@ public class ChaseState : EnemyState
         enemyCtrl.MushroomAnimation.MushroomMovingAnim();
     }
 
-    public override void UpdateState()
-    {
-        enemyCtrl.EnemyMovement.gameObject.SetActive(true);
-
-        if (enemyCtrl.EnemyAttack.CanAttack())
+        public override void UpdateState()
         {
-            enemyStateMachine.ChangeState(new AttackState(enemyStateMachine));
+            enemyCtrl.EnemyMovement.gameObject.SetActive(true);
+
+            if (enemyCtrl.EnemyAttack.CanAttack())
+            {
+                enemyStateMachine.ChangeState(new AttackState(enemyStateMachine));
+            }
         }
-    }
 
     public override void ExitState()
     {

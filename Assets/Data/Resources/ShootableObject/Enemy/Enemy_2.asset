@@ -20,3 +20,4 @@ MonoBehaviour:
     dropRate: 0
     minDrop: 0
     maxDrop: 0
+  enemyProfile: {fileID: 11400000, guid: 5ceeecbe3dcff7f4589b20eb41d88971, type: 2}
