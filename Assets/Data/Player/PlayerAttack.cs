@@ -36,7 +36,7 @@ public class PlayerAttack : TrisMonoBehaviour
         this.timer = 0f;
 
         Vector3 mousePos = InputManager.Instance.GetMousePos();
-       
+        
         Vector2 direction = (mousePos - PlayerCtrl.Instance.PlayerDrone.transform.position).normalized;
         Transform newBullet = BulletSpawner.Instance.Spawn(BulletSpawner.bulletOne,PlayerCtrl.Instance.PlayerDrone.targetPoint.transform.position, Quaternion.identity);
         AmmoManager.Instance.UseAmmo();

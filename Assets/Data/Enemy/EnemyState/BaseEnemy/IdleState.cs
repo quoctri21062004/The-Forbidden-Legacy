@@ -8,24 +8,23 @@ public class IdleState : EnemyState
 
     public override void EnterState()
     {
-        enemyCtrl.MushroomAnimation.MushroomIdleAnim();
+        enemyCtrl.EnemyAnimation.EnemyIdleAnim();
     }
 
     public override void UpdateState()
     {
         if (enemyCtrl.EnemyAttack.CanAttack())
         {
-            enemyStateMachine.ChangeState(new AttackState(enemyStateMachine));
-            return;
+            enemyStateMachine.ChangeState(EnemyStateType.Attack);
         }
 
         if (enemyCtrl.EnemyDetection.Trigger)
         {
-            enemyStateMachine.ChangeState(new ChaseState(enemyStateMachine));
+            enemyStateMachine.ChangeState(EnemyStateType.Chase);
         }
-        if(enemyCtrl.EnemyMovement.isMoving)
+        if (enemyCtrl.EnemyMovement.CanMove())
         {
-            enemyStateMachine.ChangeState(new ChaseState(enemyStateMachine));
+            enemyStateMachine.ChangeState(EnemyStateType.Chase);
         }
     }
 

@@ -11,5 +11,6 @@ public class ShootableObjsProfileSO : ScriptableObject
     public List<DropItem> dropList;
 
     public EnemyProfileSO enemyProfile;
+    public EnemyType enemyType;
 
 }

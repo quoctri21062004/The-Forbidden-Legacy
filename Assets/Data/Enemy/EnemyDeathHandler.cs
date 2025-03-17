@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal.Profiling.Memory.Experimental.FileFormat;
 using UnityEngine;
 
 public class EnemyDeathHandler : TrisMonoBehaviour
@@ -37,10 +38,15 @@ public class EnemyDeathHandler : TrisMonoBehaviour
     private float GetDieAnimationLength()
     {
         AnimationClip[] clips = animator.runtimeAnimatorController.animationClips;
+        EnemyType enemyType = enemyStateMachine.EnemyProfileSO.enemyType;
         foreach (AnimationClip clip in clips)
         {
-            if (clip.name.Contains("MushroomDie"))
+            if (clip.name.Contains(enemyType + "_Die"))
+            {
+                Debug.Log(enemyType + "da chet!!");
                 return clip.length;
+            }
+               // return clip.length;
         }
         return 1f;
     }

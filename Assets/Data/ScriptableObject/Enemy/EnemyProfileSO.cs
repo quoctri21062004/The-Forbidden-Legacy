@@ -6,4 +6,5 @@ using UnityEngine;
 public class EnemyProfileSO : ScriptableObject
 {
     public bool isSpawner; 
+   
 }

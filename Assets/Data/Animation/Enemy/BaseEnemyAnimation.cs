@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MushroomAnimation : EnemyAbstract
+public class BaseEnemyAnimation : EnemyAbstract
 {
-    [Header("Mushroom Animation")]
+    [Header("Enemy Animation")]
     [SerializeField] protected Animator animator;
     public Animator Animator => animator;
 
@@ -13,7 +13,7 @@ public class MushroomAnimation : EnemyAbstract
     [SerializeField] protected bool isAttack;
     [SerializeField] protected Transform model;
 
-
+ 
     protected override void LoadComponents()
     {
         base.LoadComponents();
@@ -24,15 +24,15 @@ public class MushroomAnimation : EnemyAbstract
         if (animator != null) return;
         animator = GetComponent<Animator>();
     }
-    public virtual void MushroomIdleAnim()
+    public virtual void EnemyIdleAnim()
     {
         isRunning = false;
         animator.SetBool("IsRunning", isRunning);
     }
 
-    public virtual void MushroomMovingAnim()
+    public virtual void EnemyMovingAnim()
     {
-        Vector2 mushroomDirection = (Vector2)transform.position - (Vector2)(previousPosition);
+        Vector2 enemyDirection = (Vector2)transform.position - (Vector2)(previousPosition);
 
         Vector2 currentPos = transform.parent.position;
         isRunning = currentPos != (Vector2)previousPosition;
@@ -40,7 +40,7 @@ public class MushroomAnimation : EnemyAbstract
 
         if (isRunning)
         {
-            float moveX = mushroomDirection.x > 0 ? 1 : -1;
+            float moveX = enemyDirection.x > 0 ? 1 : -1;
             animator.SetFloat("moveX", moveX);
 
             if (Mathf.Sign(model.localScale.x) != moveX)
@@ -51,7 +51,7 @@ public class MushroomAnimation : EnemyAbstract
         previousPosition = currentPos;
     }
 
-    public virtual void MushroomAttackAnim()
+    public virtual void EnemyAttackAnim()
     {
         animator.SetBool("IsAttack", true);
         StartCoroutine(ResetAttackAnim());
@@ -74,7 +74,7 @@ public class MushroomAnimation : EnemyAbstract
         enemyCtrl.EnemyDamageSender.gameObject.SetActive(false);
     }
 
-    public virtual void MushroomDieAnim()
+    public virtual void EnemyDieAnim()
     {
         animator.SetBool("IsDie", true);
     }

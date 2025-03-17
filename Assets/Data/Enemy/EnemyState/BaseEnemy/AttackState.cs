@@ -14,7 +14,7 @@ public class AttackState : EnemyState
     {
         if (isAttacking) return;
         isAttacking = true;
-        enemyCtrl.MushroomAnimation.MushroomAttackAnim();
+        enemyCtrl.EnemyAnimation.EnemyAttackAnim();
         lastAttackTime = Time.time;
 
         enemyStateMachine.StartCoroutine(ResetAfterAttack());
@@ -22,7 +22,9 @@ public class AttackState : EnemyState
 
     public override void ExitState()
     {
-        mushroomAnimation.Animator.SetBool("IsAttack", false);
+        if (enemyAnimation == null) return;
+
+        enemyAnimation.Animator.SetBool("IsAttack", false);
         isAttacking = false;
     }
 
@@ -32,7 +34,7 @@ public class AttackState : EnemyState
         {
             isAttacking = true;
             lastAttackTime = Time.time;
-            enemyCtrl.MushroomAnimation.MushroomAttackAnim();
+            enemyCtrl.EnemyAnimation.EnemyAttackAnim();
 
             enemyStateMachine.StartCoroutine(ResetAfterAttack());
         }

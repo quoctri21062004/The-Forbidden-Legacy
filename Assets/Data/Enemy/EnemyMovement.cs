@@ -7,10 +7,9 @@ public class EnemyMovement : TrisMonoBehaviour
     [Header("Enemy Movement")]
     [SerializeField] protected float moveSpeed =0.005f; 
     [SerializeField] protected float distance = 1f;
-    [SerializeField] protected float minDistance = 5f;
+    [SerializeField] protected float minDistance = 6f;
     [SerializeField] protected Transform target;
     [SerializeField] protected Vector3 targetPosition;
-    [SerializeField] public bool isMoving;
     protected virtual void FixedUpdate()
     {
         this.GetTargetPosition();
@@ -38,14 +37,18 @@ public class EnemyMovement : TrisMonoBehaviour
         this.targetPosition = this.target.position;
         this.targetPosition.z = 0;
     }
-    protected virtual void Moving()
+
+    public virtual bool CanMove()
     {
         this.distance = Vector3.Distance(transform.position, targetPosition);
-        if (this.distance < minDistance) return;
+        if (this.distance < minDistance) return false;
+        return true;
+    }
+    protected virtual void Moving()
+    {
+        if (!CanMove()) return;
 
         Vector3 newPos = Vector3.Lerp(transform.parent.position, targetPosition,this.moveSpeed);
         transform.parent.position = newPos;
-
-        this.isMoving=true;
     }
 }

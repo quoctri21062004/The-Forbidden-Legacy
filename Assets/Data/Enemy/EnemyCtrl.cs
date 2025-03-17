@@ -16,8 +16,8 @@ public class EnemyCtrl : ShootableObjectCtrl
     [SerializeField] protected EnemyDetection enemyDetection;
     public EnemyDetection EnemyDetection => enemyDetection;
 
-    [SerializeField] protected MushroomAnimation mushroomAnimation;
-    public MushroomAnimation MushroomAnimation => mushroomAnimation;
+    [SerializeField] protected BaseEnemyAnimation enemyAnimation;
+    public BaseEnemyAnimation EnemyAnimation => enemyAnimation;
 
     [SerializeField] protected EnemyDamageSender enemyDamageSender;
     public EnemyDamageSender EnemyDamageSender => enemyDamageSender;
@@ -51,7 +51,7 @@ public class EnemyCtrl : ShootableObjectCtrl
         this.LoadEnemyDamageSender();
         this.LoadEnemyDamageReceiver();
         this.LoadEnemyStateMachine();
-        this.LoadMushroomAnimation();
+        this.LoadEnemyAnimation();
         this.LoadEnemyProfile();
         this.LoadEnemySpawner();
     }
@@ -89,11 +89,11 @@ public class EnemyCtrl : ShootableObjectCtrl
         GameObject stateMachine = GameObject.Find("EnemyStateMachine");
         enemyStateMachine = stateMachine.GetComponent<EnemyStateMachine>();
     }
-    protected virtual void LoadMushroomAnimation()
+    protected virtual void LoadEnemyAnimation()
     {
-        if(mushroomAnimation != null) return;
+        if(enemyAnimation != null) return;
         Transform model = transform.Find("Model");
-        mushroomAnimation = model.GetComponent<MushroomAnimation>();
+        enemyAnimation = model.GetComponent<BaseEnemyAnimation>();
     }
 
     protected virtual void LoadEnemyProfile()
