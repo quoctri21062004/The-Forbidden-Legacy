@@ -7,5 +7,6 @@ public enum EnemyStateType
     Idle,
     Chase,
     Attack,
-    Die
+    Die,
+    Destroy
 }

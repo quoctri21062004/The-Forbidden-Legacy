@@ -33,6 +33,9 @@ public class EnemyCtrl : ShootableObjectCtrl
 
     [SerializeField] protected EnemyProfileSO enemyProfile;
 
+    [SerializeField] protected NightBorneAnimation nightBorneAnimation;
+    public NightBorneAnimation NightBorneAnimation => nightBorneAnimation;
+
     protected override void Start()
     {
         if (shootableObjsProfileSO != null && shootableObjsProfileSO.objType == ShootableObjsType.Enemy)
@@ -54,6 +57,7 @@ public class EnemyCtrl : ShootableObjectCtrl
         this.LoadEnemyAnimation();
         this.LoadEnemyProfile();
         this.LoadEnemySpawner();
+        this.LoadNightBorneAnimation();
     }
 
     protected virtual void LoadEnemyMovement()
@@ -104,6 +108,12 @@ public class EnemyCtrl : ShootableObjectCtrl
         }
     }
 
+    protected virtual void LoadNightBorneAnimation()
+    {
+        if (nightBorneAnimation != null) return;
+        Transform model = transform.Find("Model");
+        nightBorneAnimation = model.GetComponent<NightBorneAnimation>();
+    }
     protected virtual void LoadEnemySpawner()
     {
         if(enemySpawner != null) return;

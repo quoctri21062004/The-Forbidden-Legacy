@@ -4,5 +4,10 @@ using UnityEngine;
 
 public class NightBorneAnimation : BaseEnemyAnimation
 {
- //
+   // [Header("Night Borne Animation")]
+
+    public virtual void EnemyDestroyAnim()
+    {
+        animator.SetBool("IsDestroy",true);
+    }
 }

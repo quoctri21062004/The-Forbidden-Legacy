@@ -37,6 +37,7 @@ public class EnemyStateFactory
             EnemyStateType.Chase => new NightBorneChaseState(enemyStateMachine),
             EnemyStateType.Attack => new NightBorneAttackState(enemyStateMachine),
             EnemyStateType.Die => new NightBorneDieState(enemyStateMachine),
+            EnemyStateType.Destroy=> new NightBorneDestroyState(enemyStateMachine),
             _ => null
         };
     }

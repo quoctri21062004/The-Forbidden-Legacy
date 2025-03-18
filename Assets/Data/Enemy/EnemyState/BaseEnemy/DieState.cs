@@ -22,6 +22,7 @@ public class DieState : EnemyState
 
     public override void UpdateState()
     {
-       //
+       if(!enemyCtrl.EnemyDamageReceiver.IsDead()) return;
+       enemyStateMachine.ChangeState(EnemyStateType.Destroy);
     }
 }

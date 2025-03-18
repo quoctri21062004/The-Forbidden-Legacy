@@ -587,6 +587,7 @@ MonoBehaviour:
   enemyDamageReceiver: {fileID: 0}
   enemySpawner: {fileID: 0}
   enemyProfile: {fileID: 0}
+  nightBorneAnimation: {fileID: 0}
 --- !u!4 &170821249
 Transform:
   m_ObjectHideFlags: 0
@@ -675,6 +676,7 @@ MonoBehaviour:
   enemyDamageReceiver: {fileID: 165238254}
   enemySpawner: {fileID: 0}
   enemyProfile: {fileID: 11400000, guid: 4ba063d8309e1eb448531399e5c88db0, type: 2}
+  nightBorneAnimation: {fileID: 1444256097}
 --- !u!114 &224668641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3359,6 +3361,7 @@ MonoBehaviour:
   enemyDamageReceiver: {fileID: 95391048}
   enemySpawner: {fileID: 0}
   enemyProfile: {fileID: 11400000, guid: 4ba063d8309e1eb448531399e5c88db0, type: 2}
+  nightBorneAnimation: {fileID: 0}
 --- !u!4 &1172696444
 Transform:
   m_ObjectHideFlags: 0
@@ -3847,6 +3850,7 @@ MonoBehaviour:
   enemyDamageReceiver: {fileID: 575201875}
   enemySpawner: {fileID: 1152560829}
   enemyProfile: {fileID: 11400000, guid: 5ceeecbe3dcff7f4589b20eb41d88971, type: 2}
+  nightBorneAnimation: {fileID: 0}
 --- !u!114 &1280325592
 MonoBehaviour:
   m_ObjectHideFlags: 0
