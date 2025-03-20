@@ -22,10 +22,9 @@ public class ShootableObjectDameReceiver : DameReceiver
     protected override void OnDead()
     {
         shootableObjectCtrl.Spawner.Despawn(transform.parent);
-        this.DropItemOnDead();
     }
 
-    protected virtual void DropItemOnDead()
+    public virtual void DropItemOnDead()
     {
         Vector3 posDrop = transform.position;
         Quaternion rotDrop =transform.rotation;

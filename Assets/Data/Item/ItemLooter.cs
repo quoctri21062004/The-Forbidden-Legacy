@@ -30,9 +30,7 @@ public class ItemLooter : InventoryAbstract
         if (itemPickupable == null) return;
 
         ItemCode itemCode = itemPickupable.GetItemCode();
-        if(this.inventory.AddItem(itemCode,1))
-        {
-            itemPickupable.Picked();
+        this.inventory.AddItem(itemCode, 1);
+        itemPickupable.Picked();
         }
     }
-}

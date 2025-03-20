@@ -8,6 +8,7 @@ public class DieState : EnemyState
 
     public override void EnterState()
     {
+
         enemyCtrl.EnemyAnimation.EnemyDieAnim();
         var deathHandler = enemyCtrl.GetComponent<EnemyDeathHandler>();
         if (deathHandler == null) return;
@@ -22,7 +23,6 @@ public class DieState : EnemyState
 
     public override void UpdateState()
     {
-       if(!enemyCtrl.EnemyDamageReceiver.IsDead()) return;
-       enemyStateMachine.ChangeState(EnemyStateType.Destroy);
+        //
     }
 }

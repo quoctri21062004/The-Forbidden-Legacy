@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjName: Enemy_1
   objType: 1
-  hpMax: 2
+  hpMax: 3
   dropList:
   - itemSO: {fileID: 11400000, guid: b2306018616b09b43bc73bc5008032c0, type: 2}
     dropRate: 0
     minDrop: 0
     maxDrop: 0
-  enemyProfile: {fileID: 0}
+  enemyProfile: {fileID: 11400000, guid: 5ceeecbe3dcff7f4589b20eb41d88971, type: 2}
+  enemyType: 1

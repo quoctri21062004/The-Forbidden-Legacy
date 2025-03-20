@@ -19,8 +19,6 @@ public class EnemyDamageReceiver : ShootableObjectDameReceiver
     }
     protected override void OnDead()
     {
-        // enemyStateMachine.ChangeState(new DieState(enemyStateMachine));
         enemyStateMachine.ChangeState(EnemyStateType.Die);
-       
     }
 }

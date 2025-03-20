@@ -46,7 +46,6 @@ public class EnemyDeathHandler : TrisMonoBehaviour
                 Debug.Log(enemyType + "da chet!!");
                 return clip.length;
             }
-               // return clip.length;
         }
         return 1f;
     }
@@ -59,12 +58,14 @@ public class EnemyDeathHandler : TrisMonoBehaviour
         {
             Debug.Log("🛠 Despawn bằng EnemySpawner");
             enemyCtrl.EnemySpawner.Despawn(transform);
+            enemyCtrl.EnemyDamageReceiver.DropItemOnDead();
 
         }
         else
         {
             Debug.Log("❌ Không có EnemySpawner, setActive false");
             enemyRoot.gameObject.SetActive(false);
+            enemyCtrl.EnemyDamageReceiver.DropItemOnDead();
         }
     }
 }

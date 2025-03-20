@@ -9,7 +9,12 @@ public class Inventory : TrisMonoBehaviour
     [SerializeField] protected int maxSlot = 70;
     [SerializeField] protected List<ItemInventory> items;
 
-    public virtual bool AddItem(ItemCode itemCode, int addCount)
+    protected override void Start()
+    {
+        base.Start();
+        this.AddItem(ItemCode.Ammo, 25);
+    }
+    public virtual int AddItem(ItemCode itemCode, int addCount)
     {
         ItemProfileSO itemProfile = this.GetItemProfile(itemCode);
 
@@ -17,13 +22,14 @@ public class Inventory : TrisMonoBehaviour
         int newCount;
         int itemMaxStack;
         int addMore;
+        int addedTotal = 0;
         ItemInventory itemExist;
         for (int i = 0; i < this.maxSlot; i++)
         {
             itemExist = GetItemNotFullStack(itemCode);
             if (itemExist == null)
             {
-                if(this.IsInventoryFull())return false;
+                if(this.IsInventoryFull())return 0;
 
                 itemExist = this.CreateEmptyItem(itemProfile);
                 this.items.Add(itemExist);
@@ -36,6 +42,7 @@ public class Inventory : TrisMonoBehaviour
                 addMore = itemMaxStack - itemExist.itemCount;
                 newCount = itemExist.itemCount + addMore;
                 addRemain -= addMore;
+                addedTotal += addMore;
             }
             else
             {
@@ -44,7 +51,39 @@ public class Inventory : TrisMonoBehaviour
             itemExist.itemCount = newCount;
             if (addRemain < 1) break;
         }
-        return true;
+        return addedTotal;
+    }
+
+    public virtual int DeductItem (ItemCode itemCode, int deductCount)
+    {
+        ItemProfileSO itemProfile = this.GetItemProfile(itemCode);
+        
+        int deductRemain = deductCount;
+        int deductMore;
+        int deductedTotal = 0;
+        ItemInventory itemExist;
+
+
+        for (int i = this.items.Count - 1; i >= 0; i--)
+        {
+                itemExist = this.items[i];
+            if (itemExist.itemProfile.itemCode == itemCode)
+            {
+                deductMore = Mathf.Min(deductRemain, itemExist.itemCount);
+
+                itemExist.itemCount -= deductMore;
+                deductRemain -= deductMore;
+                deductedTotal += deductMore;
+
+                if (itemExist.itemCount <= 0)
+                {
+                    this.items.RemoveAt(i); 
+                }
+
+                if (deductRemain <= 0) break;
+            }
+        }
+        return deductedTotal;
     }
 
     protected virtual ItemInventory GetItemNotFullStack(ItemCode itemCode)
@@ -97,6 +136,19 @@ public class Inventory : TrisMonoBehaviour
     {
         if(this.items.Count >=this.maxSlot) return true;
         return false;
+    }
+
+    public virtual int GetItemCount(ItemCode itemCode)
+    {
+        int itemCountInInventory = 0;
+        foreach (var item in this.items)
+        {
+            if (item.itemProfile.itemCode == itemCode)
+            {
+                return itemCountInInventory += item.itemCount;
+            }
+        }
+        return itemCountInInventory;
     }
 }
 

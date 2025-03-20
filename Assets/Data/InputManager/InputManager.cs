@@ -28,6 +28,7 @@ public class InputManager : TrisMonoBehaviour
     {
         this.GetDirectionByKeyboard();
         this.GetSignalsByMouse();
+        this.GetReloadAmmo();
     }
     protected virtual Vector3 GetDirectionByKeyboard()
     {
@@ -54,5 +55,11 @@ public class InputManager : TrisMonoBehaviour
         mousePos=Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = 0;
         return mousePos;
+    }
+
+    public virtual bool GetReloadAmmo()
+    {
+        if (Input.GetKeyDown(KeyCode.R)) return true;
+        return false;
     }
 }

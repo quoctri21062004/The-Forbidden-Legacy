@@ -14,7 +14,7 @@ public class DestroyState : EnemyState
 
     public override void ExitState()
     {
-        //
+        
     }
 
     public override void UpdateState()
