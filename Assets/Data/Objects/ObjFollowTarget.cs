@@ -18,6 +18,9 @@ public class ObjFollowTarget : TrisMonoBehaviour
         if (this.target == null) return;
         transform.position = Vector3.Lerp(transform.position, target.position, speed*Time.fixedDeltaTime);
     }
-
+    protected virtual void SetTarget()
+    {
+       //
+    }
 
 }
