@@ -29,6 +29,7 @@ public class InputManager : TrisMonoBehaviour
         this.GetDirectionByKeyboard();
         this.GetSignalsByMouse();
         this.GetReloadAmmo();
+        this.GetChangeItem();
     }
     protected virtual Vector3 GetDirectionByKeyboard()
     {
@@ -61,5 +62,12 @@ public class InputManager : TrisMonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R)) return true;
         return false;
+    }
+
+    public virtual void GetChangeItem()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1)) Debug.Log("DA CHUYEN SANG DUNG KIEM");
+        if (Input.GetKeyDown(KeyCode.Alpha2)) Debug.Log("DA CHUYEN SANG DUNG SUNG");
+        if (Input.GetKeyDown(KeyCode.Alpha3)) Debug.Log("DA SU DUNG ITEM HOI MAU");
     }
 }

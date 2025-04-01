@@ -46,15 +46,8 @@ public class DroneAnimation : TrisMonoBehaviour
         previousPosition = transform.position;
 
     }
-    protected virtual void DroneShooting()
+    public virtual void DroneShooting()
     {
-        if(InputManager.Instance.GetSignalsByMouse())
-        {
-            animator.SetBool("shoot", true);
-        }
-        if(!InputManager.Instance.GetSignalsByMouse())
-        {
-            animator.SetBool("shoot",false);
-        }
+       animator.SetBool("shoot",true);
     }
 }

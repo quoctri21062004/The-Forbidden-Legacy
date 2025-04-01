@@ -14,6 +14,7 @@ public class PlayerAnimation : TrisMonoBehaviour
 
     protected virtual void Update()
     {
+        this.PlayerDirection();
         this.PlayerAnim();
     }
     protected override void LoadComponents()
@@ -34,21 +35,19 @@ public class PlayerAnimation : TrisMonoBehaviour
         animator = GetComponent<Animator>();
         Debug.LogWarning(transform.name + " :LoadAnimator", gameObject);
     }
-    protected virtual void PlayerAnim()
+    public virtual void PlayerDirection()
     {
         Vector2 playerDirection = InputManager.Instance.Direction;
         isMoving = playerDirection != Vector2.zero;
         if (isMoving)
         {
-            lastMoveDirection = playerDirection.normalized;
+           lastMoveDirection = playerDirection.normalized;
         }
+    }
+    protected virtual void PlayerAnim()
+    {
         animator.SetBool("move", playerCtrl.PlayerMovement.CheckIsMoving());
-        animator.SetFloat("moveX", playerDirection.x);
-        animator.SetFloat("moveY", playerDirection.y);
-        if (!isMoving)
-        {
-            animator.SetFloat("moveX", lastMoveDirection.x);
-            animator.SetFloat("moveY", lastMoveDirection.y);
-        }
+        animator.SetFloat("moveX", isMoving ? InputManager.Instance.Direction.x : lastMoveDirection.x);
+        animator.SetFloat("moveY", isMoving ? InputManager.Instance.Direction.y : lastMoveDirection.y);
     }
 }

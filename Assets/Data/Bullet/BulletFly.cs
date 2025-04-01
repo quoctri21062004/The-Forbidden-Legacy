@@ -5,7 +5,7 @@ using UnityEngine;
 public class BulletFly : TrisMonoBehaviour
 {
     [Header("Bullet Fly")]
-    [SerializeField] protected float speedBullet = 2f;
+    [SerializeField] protected float speedBullet = 40f;
     [SerializeField] protected Vector2 directionBullet = Vector2.right;
     [SerializeField] protected Rigidbody2D rb2;
     [SerializeField] protected Transform player;
@@ -20,6 +20,7 @@ public class BulletFly : TrisMonoBehaviour
         base.LoadComponents();
         this.LoadRigidbody();
         this.LoadBulletCtrl();
+        this.LoadPlayer();
     }
 
     protected virtual void LoadRigidbody()
@@ -31,6 +32,12 @@ public class BulletFly : TrisMonoBehaviour
     {
         if (this.bulletCtrl != null) return;
         bulletCtrl = GetComponentInParent<BulletCtrl>();
+    }
+    protected virtual void LoadPlayer()
+    {
+        if(player != null) return;
+        GameObject _player = GameObject.FindGameObjectWithTag("Player");
+        player = _player.transform;
     }
     protected virtual void Fly()
     {
