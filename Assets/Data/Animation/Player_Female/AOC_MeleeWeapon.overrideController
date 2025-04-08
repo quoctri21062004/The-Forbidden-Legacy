@@ -9,5 +9,7 @@ AnimatorOverrideController:
   m_Name: AOC_MeleeWeapon
   m_Controller: {fileID: 9100000, guid: e723dec619d7dc1459c6ad86784700a5, type: 2}
   m_Clips:
-  - m_OriginalClip: {fileID: 7400000, guid: 79503da6b8243cc4a8e16a42465b657a, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 853eda038483a3b4a884ae4df7d041d8, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: fd8e4d1885e56d24c9167c1bfa70655d, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: fd8e4d1885e56d24c9167c1bfa70655d, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 32c2427cef5ad39489df3e99ebc32460, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 32c2427cef5ad39489df3e99ebc32460, type: 2}

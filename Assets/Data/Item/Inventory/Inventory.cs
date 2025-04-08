@@ -12,7 +12,7 @@ public class Inventory : TrisMonoBehaviour
     protected override void Start()
     {
         base.Start();
-        this.AddItem(ItemCode.Ammo, 100);
+        this.AddItem(ItemCode.Ammo, 60);
     }
     public virtual int AddItem(ItemCode itemCode, int addCount)
     {

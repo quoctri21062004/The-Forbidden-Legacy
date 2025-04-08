@@ -66,8 +66,7 @@ public class InputManager : TrisMonoBehaviour
 
     public virtual void GetChangeItem()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1)) Debug.Log("DA CHUYEN SANG DUNG KIEM");
-        if (Input.GetKeyDown(KeyCode.Alpha2)) Debug.Log("DA CHUYEN SANG DUNG SUNG");
-        if (Input.GetKeyDown(KeyCode.Alpha3)) Debug.Log("DA SU DUNG ITEM HOI MAU");
+        if (Input.GetKeyDown(KeyCode.Alpha1)) Debug.Log("DA DUNG ITEM HOI MAU");
+        if (Input.GetKeyDown(KeyCode.Alpha2)) Debug.Log("DA DUNG ITEM HOI NANG LUONG");
     }
 }
