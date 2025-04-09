@@ -13,6 +13,8 @@ public class BulletCtrl : TrisMonoBehaviour
 
     [SerializeField] protected BulletDespawn bulletDespawn;
     public BulletDespawn BulletDespawn => bulletDespawn;
+    [SerializeField] protected WeaponProfileSO weaponProfile;
+    public WeaponProfileSO WeaponProfile => weaponProfile;
     protected override void LoadComponents()
     {
         base.LoadComponents();

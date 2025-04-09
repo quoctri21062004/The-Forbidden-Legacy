@@ -41,6 +41,7 @@ public class BulletFly : TrisMonoBehaviour
     }
     protected virtual void Fly()
     {
+        SetSpeedBullet();
         rb2.velocity = speedBullet * directionBullet;
 
         float angle = Mathf.Atan2(directionBullet.y, directionBullet.x) * Mathf.Rad2Deg;
@@ -52,4 +53,8 @@ public class BulletFly : TrisMonoBehaviour
         directionBullet = newDirection; 
     }
 
+    public virtual void SetSpeedBullet()
+    {
+        this.speedBullet = bulletCtrl.WeaponProfile.speedBullet;
+    }
 }

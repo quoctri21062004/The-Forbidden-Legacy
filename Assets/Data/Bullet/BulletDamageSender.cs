@@ -6,7 +6,7 @@ public class BulletDamageSender : DameSender
 {
     [Header("Enemy Damage Receiver")]
     [SerializeField] protected BulletCtrl bulletCtrl;
-
+    [SerializeField] protected WeaponProfileSO weaponProfile;
     protected override void LoadComponents()
     {
         base.LoadComponents();
@@ -18,8 +18,14 @@ public class BulletDamageSender : DameSender
         this.bulletCtrl = GetComponentInParent<BulletCtrl>();
         Debug.LogWarning(transform.name + " :LoadBulletCtrl", gameObject);
     }
+
+    protected virtual void SetupDameReceiver()
+    {
+        this.damage = weaponProfile.damageSender;
+    }
     public override void Send(DameReceiver damageReceiver)
     {
+        SetupDameReceiver();
         base.Send(damageReceiver);
         this.DestroyBullet();
     }
