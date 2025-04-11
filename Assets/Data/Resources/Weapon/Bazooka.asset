@@ -13,6 +13,5 @@ MonoBehaviour:
   m_Name: Bazooka
   m_EditorClassIdentifier: 
   weaponType: 2
-  itemName: Bazooka
-  damageSender: 10
-  speedBullet: 30
+  ammoProfile: {fileID: 11400000, guid: 42f849d31a7b7714fad06000b87d5f95, type: 2}
+  waeponName: Bazooka

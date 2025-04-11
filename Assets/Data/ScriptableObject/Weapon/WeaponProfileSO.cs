@@ -7,7 +7,6 @@ using UnityEngine;
 public class WeaponProfileSO : ScriptableObject
 {
     public WeaponType weaponType = WeaponType.NoType;
-    public string itemName = "no-name";
-    public float damageSender = 0f;
-    public float speedBullet = 0f;
+    public AmmoProfileSO ammoProfile = null;
+    public string waeponName = "no-name";
 }

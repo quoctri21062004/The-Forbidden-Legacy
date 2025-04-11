@@ -55,6 +55,6 @@ public class BulletFly : TrisMonoBehaviour
 
     public virtual void SetSpeedBullet()
     {
-        this.speedBullet = bulletCtrl.WeaponProfile.speedBullet;
+        this.speedBullet = bulletCtrl.WeaponProfile.ammoProfile.speedBullet;
     }
 }

@@ -8,7 +8,8 @@ public class BulletSpawner : Spawner
     private static BulletSpawner instance;
     public static BulletSpawner Instance { get => instance; }
 
-    public static string bulletOne = "Bullet_1";
+    [SerializeField] protected BulletCtrl bulletCtrl;
+    
 
     protected override void Awake()
     {
@@ -19,5 +20,20 @@ public class BulletSpawner : Spawner
         }
         BulletSpawner.instance = this;
 
+    }
+
+    public string GetNameBullet()
+    {
+        if (bulletCtrl == null || bulletCtrl.WeaponProfile == null || bulletCtrl.WeaponProfile.ammoProfile == null)
+        {
+            Debug.LogWarning("bulletCtrl or its profile is null!");
+            return string.Empty;
+        }
+        foreach (var prefab in prefabs)
+        {
+            if (prefab.name != bulletCtrl.WeaponProfile.ammoProfile.name)continue;
+             return prefab.name;
+        }
+        return string.Empty;
     }
 }

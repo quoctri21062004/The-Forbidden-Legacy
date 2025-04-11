@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -29,7 +29,8 @@ public class DroneShooting : TrisMonoBehaviour
         if (nearestEnemy == null) return;
         Vector2 direction = (nearestEnemy.position-transform.parent.position).normalized;
 
-        Transform newBullet = BulletSpawner.Instance.Spawn(BulletSpawner.bulletOne,spawnPos.position, Quaternion.identity);
+       
+        Transform newBullet = BulletSpawner.Instance.Spawn(this.bullet,spawnPos.position, Quaternion.identity);
         AmmoManager.Instance.UseAmmo();
 
         BulletFly bulletFly = newBullet.GetComponentInChildren<BulletFly>();
