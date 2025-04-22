@@ -4,6 +4,7 @@ using UnityEngine;
 
 public enum EnemyType
 {
-   Mushroom,
-   NightBorne,
+   Notype = 0,
+   Mushroom = 1,
+   NightBorne = 2,
 }

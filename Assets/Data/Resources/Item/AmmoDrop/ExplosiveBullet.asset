@@ -10,9 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bdd7a0826f6852a41bb5eff64e63e9f2, type: 3}
-  m_Name: Normal
+  m_Name: ExplosiveBullet
   m_EditorClassIdentifier: 
-  ammoType: 1
-  ammoName: Normal
-  damageSender: 1
-  speedBullet: 30
+  itemCode: 3
+  itemType: 1
+  itemName: ExplosiveBullet
+  defaultMaxStack: 7
+  ammoType: 2
+  ammoName: ExplosiveBullet
+  damageSender: 5
+  speedBullet: 25

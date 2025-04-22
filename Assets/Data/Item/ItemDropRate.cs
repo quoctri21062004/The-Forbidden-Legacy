@@ -4,10 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
-public class DropItem
+public class ItemDropRate
 {
     public ItemProfileSO itemSO;
     public float dropRate;
-    public int minDrop;
-    public int maxDrop;
 }

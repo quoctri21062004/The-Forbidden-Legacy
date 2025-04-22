@@ -17,17 +17,17 @@ public abstract class DameReceiver : TrisMonoBehaviour
     protected override void Start()
     {
         base.Start();
-        this.SetHP();
+        this.Reborn();
     }
 
     protected override void OnEnable()
     {
-        this.SetHP();
+        this.Reborn();
     }
     protected override void ResetValue()
     {
         base.ResetValue();
-        this.SetHP();
+        this.Reborn();
     }
     protected override void LoadComponents()
     {
@@ -41,7 +41,7 @@ public abstract class DameReceiver : TrisMonoBehaviour
     }
 
 
-    public virtual void SetHP()
+    public virtual void Reborn()
     {
         this.currentHp = maxHp;
         this.isDead = false;

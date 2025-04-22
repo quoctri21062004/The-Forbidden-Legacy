@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "EnemyProfile", menuName = "SO/EnemyProfile")]
-public class EnemyProfileSO : ScriptableObject
+public class EnemyProfileSO : ShootableObjsProfileSO
 {
-    public bool isSpawner; 
-   
+    [Header("Enemy ProfileSO")]
+    public bool isSpawner;
+    public EnemyType enemyType;
 }

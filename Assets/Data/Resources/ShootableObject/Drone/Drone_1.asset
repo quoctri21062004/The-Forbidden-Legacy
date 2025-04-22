@@ -15,8 +15,4 @@ MonoBehaviour:
   ObjName: Drone_1
   objType: 3
   hpMax: 20
-  dropList:
-  - itemSO: {fileID: 11400000, guid: b2306018616b09b43bc73bc5008032c0, type: 2}
-    dropRate: 0
-    minDrop: 0
-    maxDrop: 0
+  dropList: []

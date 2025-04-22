@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bdd7a0826f6852a41bb5eff64e63e9f2, type: 3}
-  m_Name: Split
+  m_Script: {fileID: 11500000, guid: 0fb92be10cf2c5d448a53235d836ea4f, type: 3}
+  m_Name: AK47
   m_EditorClassIdentifier: 
-  ammoType: 3
-  ammoName: Split
-  damageSender: 1
-  speedBullet: 30
+  itemCode: 5
+  itemType: 2
+  itemName: AK47
+  defaultMaxStack: 1

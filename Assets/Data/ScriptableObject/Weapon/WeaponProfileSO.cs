@@ -4,7 +4,7 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "WeaponProfile", menuName = "SO/WeaponProfile")]
 
-public class WeaponProfileSO : ScriptableObject
+public class WeaponProfileSO : ItemProfileSO
 {
     public WeaponType weaponType = WeaponType.NoType;
     public AmmoProfileSO ammoProfile = null;

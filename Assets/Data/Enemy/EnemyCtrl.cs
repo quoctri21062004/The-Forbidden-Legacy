@@ -104,7 +104,16 @@ public class EnemyCtrl : ShootableObjectCtrl
     {
         if (shootableObjsProfileSO != null && shootableObjsProfileSO.objType == ShootableObjsType.Enemy)
         {
-            this.enemyProfile = shootableObjsProfileSO.enemyProfile;
+            EnemyProfileSO enemySO = shootableObjsProfileSO as EnemyProfileSO;
+
+            if (enemySO != null)
+            {
+                this.enemyProfile = enemySO;
+            }
+            else
+            {
+                Debug.LogWarning($"ShootableObjsProfileSO không phải là EnemyProfileSO: {shootableObjsProfileSO.name}");
+            }
         }
     }
 

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal.Profiling.Memory.Experimental.FileFormat;
 using UnityEngine;
 
 public class EnemyStateMachine : EnemyAbstract
@@ -7,8 +8,8 @@ public class EnemyStateMachine : EnemyAbstract
     [Header("Enemy State Machine")]
     [SerializeField] public EnemyState currentState;
     [SerializeField] private EnemyStateType initialState;
-    [SerializeField] protected ShootableObjsProfileSO enemyProfileSO;
-    public ShootableObjsProfileSO EnemyProfileSO =>enemyProfileSO;
+    [SerializeField] protected EnemyProfileSO enemyProfileSO;
+    public EnemyProfileSO EnemyProfileSO =>enemyProfileSO;
 
     protected override void Start()
     {

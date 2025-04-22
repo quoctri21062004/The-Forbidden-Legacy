@@ -27,13 +27,13 @@ public class ShootableObjectDameReceiver : DameReceiver
     public virtual void DropItemOnDead()
     {
         Vector3 posDrop = transform.position;
-        Quaternion rotDrop =transform.rotation;
-        ItemDropSpawner.Instance.Drop(shootableObjectCtrl.ShootableObjsProfileSO.dropList,posDrop,rotDrop);
+        Quaternion rotDrop = transform.rotation;
+        ItemDropSpawner.Instance.Drop(this.shootableObjectCtrl.ShootableObjsProfileSO.dropList, posDrop, rotDrop);
 
     }
-    public override void SetHP()
+    public override void Reborn()
     {
         this.maxHp = this.shootableObjectCtrl.ShootableObjsProfileSO.hpMax;
-        base.SetHP();
+        base.Reborn();
     }
 }

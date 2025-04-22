@@ -67,12 +67,13 @@ public class AmmoManager : TrisMonoBehaviour
     protected virtual int GetAmmoFromInventory()
     {
         int ammoNeeded = maxAmmo - currentAmmo;
-        return inventory.DeductItem(ItemCode.Ammo, ammoNeeded);
+        return inventory.DeductItem(ItemCode.NormalBullet, ammoNeeded);
+        //AmmoProfileSO ammo = inventory.GetItemProfile<AmmoProfileSO>(ItemCode.NormalBullet);
+        //return inventory.DeductItem(, ammoNeeded);
     }
 
     protected virtual bool LoadAmmoManually()
     {
-      //  int ammoAdd = GetAmmoFromInventory();
         if (InputManager.Instance.GetReloadAmmo())
         {
             int ammoAdd = GetAmmoFromInventory();

@@ -10,9 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bdd7a0826f6852a41bb5eff64e63e9f2, type: 3}
-  m_Name: Explosive
+  m_Name: SplitBullet
   m_EditorClassIdentifier: 
-  ammoType: 2
-  ammoName: Explosive
-  damageSender: 5
-  speedBullet: 25
+  itemCode: 4
+  itemType: 1
+  itemName: SplitBullet
+  defaultMaxStack: 7
+  ammoType: 3
+  ammoName: Split
+  damageSender: 1
+  speedBullet: 30

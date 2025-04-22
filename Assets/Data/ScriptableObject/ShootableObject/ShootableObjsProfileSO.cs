@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,12 +6,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "ShootableObject",menuName =("SO/ShootableObjsProfile"))]
 public class ShootableObjsProfileSO : ScriptableObject
 {
+    [Header("ShootableObjs ProfileSO")]
     public string ObjName = "Shootable Object";
     public ShootableObjsType objType;
     public int hpMax = 2;
-    public List<DropItem> dropList;
-
-    public EnemyProfileSO enemyProfile;
-    public EnemyType enemyType;
-
+    public List<ItemDropRate> dropList;
 }

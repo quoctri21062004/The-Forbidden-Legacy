@@ -9,14 +9,15 @@ public class Inventory : TrisMonoBehaviour
     [SerializeField] protected int maxSlot = 70;
     [SerializeField] protected List<ItemInventory> items;
 
+
     protected override void Start()
     {
-        base.Start();
-        this.AddItem(ItemCode.Ammo, 60);
+        AddItem(ItemCode.NormalBullet, 60);
+        AddItem(ItemCode.ExplosiveBullet, 30);
     }
     public virtual int AddItem(ItemCode itemCode, int addCount)
     {
-        ItemProfileSO itemProfile = this.GetItemProfile(itemCode);
+        ItemProfileSO itemProfile = this.GetItemProfile<ItemProfileSO>(itemCode);
 
         int addRemain = addCount;
         int newCount;
@@ -56,7 +57,7 @@ public class Inventory : TrisMonoBehaviour
 
     public virtual int DeductItem (ItemCode itemCode, int deductCount)
     {
-        ItemProfileSO itemProfile = this.GetItemProfile(itemCode);
+        ItemProfileSO itemProfile = this.GetItemProfile<ItemProfileSO>(itemCode);
         
         int deductRemain = deductCount;
         int deductMore;
@@ -120,14 +121,25 @@ public class Inventory : TrisMonoBehaviour
         return itemInventory;
     }
 
-    protected virtual ItemProfileSO GetItemProfile(ItemCode itemCode)
-    {
-        var profiles = Resources.LoadAll("Item", typeof(ItemProfileSO));
+    //protected virtual ItemProfileSO GetItemProfile(ItemCode itemCode)
+    //{
+    //    var profiles = Resources.LoadAll("Item", typeof(ItemProfileSO));
 
-        foreach (ItemProfileSO profile in profiles)
+    //    foreach (ItemProfileSO profile in profiles)
+    //    {
+    //        if (profile.itemCode != itemCode) continue;
+    //        return profile;
+    //    }
+    //    return null;
+    //}
+    public virtual T GetItemProfile<T>(ItemCode itemCode) where T : ItemProfileSO
+    {
+        var profiles = Resources.LoadAll("Item", typeof(T));
+
+        foreach (T profile in profiles)
         {
-            if (profile.itemCode != itemCode) continue;
-            return profile;
+            if (profile.itemCode == itemCode)
+                return profile;
         }
         return null;
     }

@@ -48,7 +48,7 @@ public class Spawner : TrisMonoBehaviour
         Transform prefab = this.GetPrefabName(prefabName);
         if (prefab == null)
         {
-            Debug.LogWarning("Prefab not found" + prefabName);
+            Debug.LogWarning("Prefab not found " + prefabName);
             return null;
         }
         return this.Spawn(prefab, spawnPos, rotation);
