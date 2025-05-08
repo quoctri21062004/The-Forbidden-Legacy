@@ -12,6 +12,7 @@ public class EnemyDamageReceiver : ShootableObjectDameReceiver
         base.LoadComponents();
         this.LoadEnemyStateMachine();
     }
+   
     protected virtual void LoadEnemyStateMachine()
     {
         if(enemyStateMachine != null) return;
@@ -20,5 +21,9 @@ public class EnemyDamageReceiver : ShootableObjectDameReceiver
     protected override void OnDead()
     {
         enemyStateMachine.ChangeState(EnemyStateType.Die);
+    }
+    protected override void AfterDead()
+    {
+        if(this.isDead!=true) return;
     }
 }

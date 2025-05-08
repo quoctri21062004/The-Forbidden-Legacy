@@ -6,7 +6,7 @@ public class BulletDamageSender : DameSender
 {
     [Header("Enemy Damage Receiver")]
     [SerializeField] protected BulletCtrl bulletCtrl;
-    [SerializeField] protected AmmoProfileSO ammoProfileSO;
+    [SerializeField] protected float damageSender;
     protected override void LoadComponents()
     {
         base.LoadComponents();
@@ -21,7 +21,7 @@ public class BulletDamageSender : DameSender
 
     protected virtual void SetupDameReceiver()
     {
-        this.damage = bulletCtrl.WeaponProfile.ammoProfile.damageSender;
+        this.damageSender = this.damage;
     }
     public override void Send(DameReceiver damageReceiver)
     {

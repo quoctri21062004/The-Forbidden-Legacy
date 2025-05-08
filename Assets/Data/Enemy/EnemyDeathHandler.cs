@@ -57,12 +57,16 @@ public class EnemyDeathHandler : TrisMonoBehaviour
         {
             enemyCtrl.EnemySpawner.Despawn(transform);
             enemyCtrl.EnemyDamageReceiver.DropItemOnDead();
+            FXSpawner.Instance.Spawn(FXSpawner.fxOne,transform.position,transform.rotation);
+            FXSpawner.Instance.FXCtrl.SoulFireAnimation.FXRun();
 
         }
         else
         {
             enemyRoot.gameObject.SetActive(false);
             enemyCtrl.EnemyDamageReceiver.DropItemOnDead();
+            FXSpawner.Instance.Spawn(FXSpawner.fxOne, transform.position, transform.rotation);
+            FXSpawner.Instance.FXCtrl.SoulFireAnimation.FXRun();
         }
     }
 }

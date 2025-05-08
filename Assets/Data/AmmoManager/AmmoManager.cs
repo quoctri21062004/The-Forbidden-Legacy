@@ -57,19 +57,15 @@ public class AmmoManager : TrisMonoBehaviour
     {
         if (!CanReloadAmmo()) return;
 
-        //int ammoAdd = GetAmmoFromInventory();
-        //if (ammoAdd <= 0) return; 
-    
         if(LoadAmmoManually()) return;
         LoadAmmoAuto();
     }
 
     protected virtual int GetAmmoFromInventory()
     {
+        // TODO: Tách ammo cho Drone và Player, hiện tại cả hai đang dùng chung 1 loại
         int ammoNeeded = maxAmmo - currentAmmo;
         return inventory.DeductItem(ItemCode.NormalBullet, ammoNeeded);
-        //AmmoProfileSO ammo = inventory.GetItemProfile<AmmoProfileSO>(ItemCode.NormalBullet);
-        //return inventory.DeductItem(, ammoNeeded);
     }
 
     protected virtual bool LoadAmmoManually()
@@ -100,5 +96,5 @@ public class AmmoManager : TrisMonoBehaviour
         return currentAmmo;
     }
 
-
+   
 }

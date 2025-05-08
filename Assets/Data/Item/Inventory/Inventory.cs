@@ -7,13 +7,12 @@ public class Inventory : TrisMonoBehaviour
 {
     [Header("Inventory")]
     [SerializeField] protected int maxSlot = 70;
-    [SerializeField] protected List<ItemInventory> items;
+    [SerializeField] public List<ItemInventory> items;
 
 
     protected override void Start()
     {
-        AddItem(ItemCode.NormalBullet, 60);
-        AddItem(ItemCode.ExplosiveBullet, 30);
+        AddItem(ItemCode.NormalBullet, 30);
     }
     public virtual int AddItem(ItemCode itemCode, int addCount)
     {
@@ -55,36 +54,72 @@ public class Inventory : TrisMonoBehaviour
         return addedTotal;
     }
 
-    public virtual int DeductItem (ItemCode itemCode, int deductCount)
-    {
-        ItemProfileSO itemProfile = this.GetItemProfile<ItemProfileSO>(itemCode);
-        
-        int deductRemain = deductCount;
-        int deductMore;
-        int deductedTotal = 0;
-        ItemInventory itemExist;
+    //public virtual int DeductItem (ItemCode itemCode, int deductCount)
+    //{
+    //    ItemProfileSO itemProfile = this.GetItemProfile<ItemProfileSO>(itemCode);
 
+    //    int deductRemain = deductCount;
+    //    int deductMore;
+    //    int deductedTotal = 0;
+    //    ItemInventory itemExist;
+
+
+    //    for (int i = this.items.Count - 1; i >= 0; i--)
+    //    {
+    //            itemExist = this.items[i];
+    //        if (itemExist.itemProfile.itemCode == itemCode)
+    //        {
+    //            deductMore = Mathf.Min(deductRemain, itemExist.itemCount);
+
+    //            itemExist.itemCount -= deductMore;
+    //            deductRemain -= deductMore;
+    //            deductedTotal += deductMore;
+
+    //            if (itemExist.itemCount <= 0)
+    //            {
+    //                this.items.RemoveAt(i); 
+    //            }
+
+    //            if (deductRemain <= 0) break;
+    //        }
+    //    }
+    //    return deductedTotal;
+    //}
+    public virtual int DeductItem(ItemProfileSO profile, int deductCount)
+    {
+        int deductRemain = deductCount;
+        int deductedTotal = 0;
 
         for (int i = this.items.Count - 1; i >= 0; i--)
         {
-                itemExist = this.items[i];
-            if (itemExist.itemProfile.itemCode == itemCode)
+            var item = this.items[i];
+            if (item.itemProfile == profile)
             {
-                deductMore = Mathf.Min(deductRemain, itemExist.itemCount);
-
-                itemExist.itemCount -= deductMore;
+                int deductMore = Mathf.Min(deductRemain, item.itemCount);
+                item.itemCount -= deductMore;
                 deductRemain -= deductMore;
                 deductedTotal += deductMore;
 
-                if (itemExist.itemCount <= 0)
-                {
-                    this.items.RemoveAt(i); 
-                }
+                if (item.itemCount <= 0)
+                    this.items.RemoveAt(i);
 
-                if (deductRemain <= 0) break;
+                if (deductRemain <= 0)
+                    break;
             }
         }
+
         return deductedTotal;
+    }
+    public virtual int DeductItem(ItemCode itemCode, int deductCount)
+    {
+        ItemProfileSO profile = this.GetItemProfile<ItemProfileSO>(itemCode);
+        if (profile == null)
+        {
+            Debug.LogWarning($"Không tìm thấy profile với mã {itemCode}");
+            return 0;
+        }
+
+        return DeductItem(profile, deductCount); // Gọi lại hàm phía trên
     }
 
     protected virtual ItemInventory GetItemNotFullStack(ItemCode itemCode)
@@ -163,57 +198,4 @@ public class Inventory : TrisMonoBehaviour
         return itemCountInInventory;
     }
 }
-
-
-
-
-
-
-
-        //public virtual bool AddItem(ItemCode itemCode, int addCount)
-        //{
-        //    ItemInventory itemInventory = this.GetItemByCode(itemCode);
-
-        //    int newCount = itemInventory.itemCount + addCount;
-        //    if (newCount > itemInventory.maxStack) return false; 
-
-        //    itemInventory.itemCount = newCount;
-        //    return true;
-        //}
-
-        //public virtual bool DeductItem(ItemCode itemCode,int deduct)
-        //{
-        //    ItemInventory itemInventory = this.GetItemByCode(itemCode);
-
-        //    int newCount = itemInventory.itemCount - deduct;
-        //    if(newCount < 0)return false;
-
-        //    itemInventory.itemCount = newCount;
-        //    return true;
-        //}
-
-        //public virtual ItemInventory GetItemByCode(ItemCode itemCode)
-        //{
-        //    ItemInventory itemInventory = this.items.Find((item) => item.itemProfile.itemCode == itemCode);
-        //    if (itemInventory == null) itemInventory = this.AddEmptyProfile(itemCode);
-        //    return itemInventory;
-        //}
-
-        //protected virtual ItemInventory AddEmptyProfile(ItemCode itemCode)
-        //{
-        //    var profiles = Resources.LoadAll("Item", typeof(ItemProfileSO));
-
-        //    foreach (ItemProfileSO profile in profiles)
-        //    {
-        //        if (profile.itemCode != itemCode) continue;
-        //        ItemInventory itemInventory = new ItemInventory
-        //        {
-        //            itemProfile = profile,
-        //            maxStack = profile.defaultMaxStack
-        //        };
-        //        this.items.Add(itemInventory);
-        //        return itemInventory;
-        //    }
-        //    return null;
-        //}
     

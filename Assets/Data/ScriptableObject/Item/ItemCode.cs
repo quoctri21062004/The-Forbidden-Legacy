@@ -10,10 +10,7 @@ public enum ItemCode
     Heath = 1,
 
     NormalBullet = 2,
-    ExplosiveBullet = 3,
-    SplitBullet=4,
 
-    Pistol=5,
 }
 public class ItemCodeParser
 {

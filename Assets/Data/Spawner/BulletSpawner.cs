@@ -24,15 +24,15 @@ public class BulletSpawner : Spawner
 
     public string GetNameBullet()
     {
-        if (bulletCtrl == null || bulletCtrl.WeaponProfile == null || bulletCtrl.WeaponProfile.ammoProfile == null)
+        if (bulletCtrl == null || bulletCtrl.AmmoProfileSO == null)
         {
             Debug.LogWarning("bulletCtrl or its profile is null!");
             return string.Empty;
         }
         foreach (var prefab in prefabs)
         {
-            if (prefab.name != bulletCtrl.WeaponProfile.ammoProfile.name)continue;
-             return prefab.name;
+            if (prefab.name != bulletCtrl.AmmoProfileSO.name) continue;
+            return prefab.name;
         }
         return string.Empty;
     }

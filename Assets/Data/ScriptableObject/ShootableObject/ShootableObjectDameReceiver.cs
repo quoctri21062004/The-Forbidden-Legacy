@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ShootableObjectDameReceiver : DameReceiver
@@ -8,6 +9,11 @@ public class ShootableObjectDameReceiver : DameReceiver
     [SerializeField] protected ShootableObjectCtrl shootableObjectCtrl;
     public ShootableObjectCtrl ShootableObjectCtrl=>shootableObjectCtrl;
 
+    protected virtual void Update()
+    {
+        if(!this.isDead)return;
+        AfterDead();
+    }
     protected override void LoadComponents()
     {
         base.LoadComponents();
@@ -23,7 +29,10 @@ public class ShootableObjectDameReceiver : DameReceiver
     {
         shootableObjectCtrl.Spawner.Despawn(transform.parent);
     }
-
+    protected virtual void AfterDead()
+    {
+        //override
+    }
     public virtual void DropItemOnDead()
     {
         Vector3 posDrop = transform.position;

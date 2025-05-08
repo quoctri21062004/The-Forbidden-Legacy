@@ -16,11 +16,7 @@ MonoBehaviour:
   objType: 1
   hpMax: 2
   dropList:
-  - itemSO: {fileID: 11400000, guid: 42f849d31a7b7714fad06000b87d5f95, type: 2}
-    dropRate: 50000
-  - itemSO: {fileID: 11400000, guid: bc176de3ca56cff4fb0cd4f84b64c75c, type: 2}
+  - itemSO: {fileID: 11400000, guid: 54371f239c32c2044afbfdcd7c243d6e, type: 2}
     dropRate: 100000
-  - itemSO: {fileID: 11400000, guid: 40059d296e0efeb4280e21f71c76e669, type: 2}
-    dropRate: 50000
   isSpawner: 1
   enemyType: 1

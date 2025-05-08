@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "AmmoProfile", menuName = "SO/AmmoProfile")]
-
 public class AmmoProfileSO : ItemProfileSO
 {
-    public AmmoType ammoType=AmmoType.NoType;
-    public string ammoName = "no-name";
-    public float damageSender = 0f;
-    public float speedBullet = 0f;
+    [Header("Ammo ProfileSO")]
+    public float dameSender = 0f;
+    public int speedFly = 0;
+    
 }

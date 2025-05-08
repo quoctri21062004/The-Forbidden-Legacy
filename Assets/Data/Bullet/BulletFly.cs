@@ -11,6 +11,7 @@ public class BulletFly : TrisMonoBehaviour
     [SerializeField] protected Transform player;
     [SerializeField] protected BulletCtrl bulletCtrl;
     public BulletCtrl BulletCtrl => bulletCtrl;
+  
     protected virtual void FixedUpdate()
     {
         this.Fly();
@@ -55,6 +56,6 @@ public class BulletFly : TrisMonoBehaviour
 
     public virtual void SetSpeedBullet()
     {
-        this.speedBullet = bulletCtrl.WeaponProfile.ammoProfile.speedBullet;
+        this.speedBullet = bulletCtrl.AmmoProfileSO.speedFly;
     }
 }
