@@ -53,20 +53,27 @@ public class EnemyDeathHandler : TrisMonoBehaviour
     {
         yield return new WaitForSeconds(dieTime);
 
+        enemyCtrl.EnemyDamageReceiver.DropItemOnDead();
+
+        Transform soulFire = FXSpawner.Instance.Spawn(FXSpawner.fxOne, transform.position, transform.rotation);
+        FXSpawner.Instance.FXCtrl.SoulFireAnimation.FXRun();
+
+        SetSoulFireInfo soulFireInfo = soulFire.GetComponentInChildren<SetSoulFireInfo>();
+        if (soulFireInfo != null)
+        {
+            soulFireInfo.SetEnemyType(enemyStateMachine.EnemyProfileSO.enemyType);
+            Debug.Log("Gán SoulFire với enemyType: " + soulFireInfo.enemyType);
+
+            SoulFireManager.Instance.currentSoulFireInfo = soulFireInfo;
+        }
+
         if (enemyCtrl.EnemySpawner != null)
         {
             enemyCtrl.EnemySpawner.Despawn(transform);
-            enemyCtrl.EnemyDamageReceiver.DropItemOnDead();
-            FXSpawner.Instance.Spawn(FXSpawner.fxOne,transform.position,transform.rotation);
-            FXSpawner.Instance.FXCtrl.SoulFireAnimation.FXRun();
-
         }
         else
         {
             enemyRoot.gameObject.SetActive(false);
-            enemyCtrl.EnemyDamageReceiver.DropItemOnDead();
-            FXSpawner.Instance.Spawn(FXSpawner.fxOne, transform.position, transform.rotation);
-            FXSpawner.Instance.FXCtrl.SoulFireAnimation.FXRun();
         }
     }
 }

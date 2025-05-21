@@ -7,7 +7,8 @@ public class FXCtrl : TrisMonoBehaviour
     [Header("FXCtrl")]
     [SerializeField] protected Transform model;
     [SerializeField] protected SoulFireAnimation soulFireAnimation;
-    public SoulFireAnimation SoulFireAnimation => soulFireAnimation;    
+    public SoulFireAnimation SoulFireAnimation => soulFireAnimation;
+
     protected override void LoadComponents()
     {
         base.LoadComponents();

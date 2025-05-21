@@ -9,6 +9,7 @@ public class EnemySpawner : Spawner
     public static EnemySpawner Instance => instance;
 
     public static string enemyOne = "Enemy_1";
+
     protected override void Awake()
     {
         base.Awake();
